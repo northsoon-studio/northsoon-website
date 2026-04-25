@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets"
+import Logo from "@/assets/logo_northsoon.svg"
+---
+
+<section class="mx-auto justify-center lg:fixed lg:z-50 2xl:max-w-7xl w-full border-b border-border-primary bg-surface-primary">
+    <div class="mx-auto justify-center w-full bg-surface-primary">
+        <div class="flex flex-col mx-auto lg:flex-row lg:justify-between lg:items-center w-full max-w-7xl border-x border-border-primary">
+            <div class="flex flex-col items-center justify-between md:px-0 sm:flex-row sm:px-8 w-full text-center text-text-primary">
+                <a href="" class="inline-flex items-center py-4 md:px-8">
+                    <Image src={Logo} class="h-auto w-40" alt="Northsoon — Web Design & Development Agency" />
+                </a>
+                <a href="https://x.com/northsoon_dev" class="px-6 py-4 sm:rounded-full lg:ml-auto lg:w-auto w-full font-grotesque font-bold text-text-inverted text-sm text-center bg-brand-primary hover:bg-brand-hover hover:text-text-inverted transition duration-300 ease-in-out uppercase" target="_blank" rel="noopener noreferrer" title="Visit X profile">
+                    Connect on X
+                </a>
+                <a href="mailto:manuel@northsoon.com" class="px-6 py-4 sm:rounded-full lg:w-auto w-full font-grotesque font-bold text-text-inverted text-sm text-center bg-brand-secondary hover:bg-brand-hover-secondary hover:text-text-inverted transition duration-300 ease-in-out" title="Send me an email" aria-label="Send me an email to manuel@northsoon.com">
+                    LET'S TALK
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

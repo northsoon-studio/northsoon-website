@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets"
+import Logo from "@/assets/logo_northsoon.svg"
+---
+
+
+<footer class="relative overflow-hidden border-t border-border-primary">
+
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-20 z-0">
+        <source src="/northsoon.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 bg-surface-accent/2 z-10"></div>
+
+    <div class="relative z-20 flex flex-col items-center justify-center text-center px-6 py-20 text-text-primary">
+
+        <h2 class="font-grotesque text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+            Let’s build something bold
+        </h2>
+
+        <div class="mt-8 text-sm text-text-secondary">
+            <p>Designed & built with ❤️ in Chile by <span class="text-text-accent font-medium"><a href="https://www.linkedin.com/in/by-manuel-caballero/?locale=en_US" class="text-text-primary underline decoration-wavy decoration-text-primary hover:text-text-accent transition" target="_blank" rel="noopener noreferrer">Manuel</a></span> - Proudly serving clients across North America.</p>
+        </div>
+
+    </div>
+
+</footer>

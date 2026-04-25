@@ -1,0 +1,53 @@
+@import "@fontsource/bricolage-grotesque";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource/inter-tight";
+@import "@fontsource-variable/inter-tight";
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Inter Tight', sans-serif;
+    --font-grotesque: 'Bricolage Grotesque', sans-serif;
+    --font-space: 'Space Grotesk Variable', sans-serif;
+}
+
+@theme {
+--color-surface-primary: #F2F3FD;
+--color-surface-secondary: #FFFFFF;
+--color-surface-accent: #2139E1;
+
+--color-text-primary: #2139E1;
+--color-text-secondary: #122087;
+--color-text-inverted: #FFFFFF;
+--color-text-accent: #FF704F;
+--color-text-base: #000000;
+
+--color-brand-primary: #2139E1;
+--color-brand-hover: #122087;
+--color-brand-secondary: #F15B40;
+--color-brand-hover-secondary: #C22400;
+
+--color-border-primary: #BCC2F7;
+--color-border-secondary: #F15B40;
+--color-border-muted: #F2F3FD;
+}
+
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@supports (font-variation-settings: normal) {
+    @theme {
+        --font-sans: 'Inter Tight Variable', sans-serif;
+        --font-grotesque: 'Bricolage Grotesque Variable', sans-serif;
+    }
+}
