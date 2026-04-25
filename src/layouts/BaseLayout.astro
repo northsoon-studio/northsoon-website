@@ -2,11 +2,13 @@
 import BaseHead from "@/components/BaseHead.astro"
 import Navigation from "@/components/global/Navigation.astro"
 import Footer from "@/components/global/Footer.astro"
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <html lang="en-US" class="selection:bg-text-secondary selection:text-white">
 	<head>
 		<BaseHead />
+		<Analytics />
 	</head>
 	<body class="mx-auto 2xl:max-w-7xl bg-surface-primary antialiased">
 		<Navigation />
