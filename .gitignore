@@ -1,4 +1,7 @@
 node_modules
 .astro
 dist
+.dist
 .vscode
+.claude
+.learning
