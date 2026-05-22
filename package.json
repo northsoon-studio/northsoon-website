@@ -7,14 +7,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "icons": "bun run tools/generate-icons.ts"
   },
   "dependencies": {
-    "@fontsource-variable/bricolage-grotesque": "^5.2.10",
-    "@fontsource-variable/inter-tight": "^5.2.7",
-    "@fontsource/bricolage-grotesque": "^5.2.10",
-    "@fontsource/inter-tight": "^5.2.7",
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/geist": "^5.2.7",
+    "@fontsource-variable/geist-mono": "^5.2.7",
+    "@fontsource-variable/inter": "^5.2.7",
     "@northsoon/astro-seo": "^3.0.0",
+    "@northsoon/phosphor-icons-astro": "^1.0.1",
     "@tailwindcss/vite": "^4.3.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",

@@ -1,0 +1,38 @@
+---
+import Sun from "@northsoon/phosphor-icons-astro/icons/Sun.astro";
+import Moon from "@northsoon/phosphor-icons-astro/icons/Moon.astro";
+import Logo from "@/components/Logo.astro";
+---
+
+<nav class="mx-auto flex w-full max-w-xl items-center justify-between px-6 py-5">
+  <a href="/" class="inline-flex items-center" aria-label="Northsoon home">
+    <Logo class="size-10" />
+  </a>
+
+  <div class="flex items-center gap-4 sm:gap-5">
+    <a
+      href="/about"
+      class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+    >
+      About
+    </a>
+
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle color theme"
+      class="inline-flex size-9 items-center justify-center rounded-md bg-background text-muted-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+    >
+      <Sun size={16} weight="bold" color="#eab308" class="hidden dark:block" />
+      <Moon size={16} weight="bold"  color="#475569" class="dark:hidden" />
+    </button>
+  </div>
+</nav>
+
+<script is:inline>
+  const btn = document.getElementById("theme-toggle");
+  btn?.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+</script>

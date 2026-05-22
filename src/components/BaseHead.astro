@@ -1,50 +1,56 @@
 ---
 import "../styles/global.css";
 import { AstroHead } from "@northsoon/astro-seo";
+import {
+  SITE_URL,
+  DEFAULT_SEO,
+  SOCIAL,
+  JSON_LD,
+  ADDITIONAL_LINK_TAGS,
+  ADDITIONAL_META_TAGS,
+} from "@/data/site-config";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+}
+
+const {
+  title = DEFAULT_SEO.title,
+  description = DEFAULT_SEO.description,
+  canonical = SITE_URL,
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = DEFAULT_SEO.ogImage,
+} = Astro.props;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <AstroHead
-  title="Northsoon — In development"
-  description="Northsoon is being rebuilt. A web design studio for trades, construction, and industrial businesses. Get in touch."
-  canonical="https://northsoon.com"
+  title={title}
+  description={description}
+  canonical={canonical}
   openGraph={{
-    url: "https://northsoon.com/",
+    url: canonical,
     type: "website",
-    title: "Northsoon — In development",
-    description: "Northsoon is being rebuilt. A web design studio for trades, construction, and industrial businesses.",
+    title: ogTitle,
+    description: ogDescription,
     site_name: "Northsoon",
-    images: [
-      {
-        url: "https://northsoon.com/social_banner.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images: [{ url: ogImage, width: 1200, height: 630 }],
   }}
   twitter={{
-    handle: "@northsoon_dev",
-    site: "@northsoon_dev",
+    handle: SOCIAL.twitterHandle,
+    site: SOCIAL.twitterHandle,
     cardType: "summary_large_image",
   }}
-  additionalLinkTags={[
-    { rel: "icon", href: "/favicon-32x32.png" },
-    { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
-    { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-icon-180x180.png" },
-  ]}
-  additionalMetaTags={[
-    { name: "theme-color", content: "#0a0a0a" },
-    { name: "author", content: "Manuel — Northsoon" },
-  ]}
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Northsoon Studio",
-    "url": "https://northsoon.com",
-    "description": "Web design agency specializing in fast, SEO-optimized websites for trades, construction, and industrial businesses.",
-    "areaServed": ["Canada", "United States"]
-  }}
+  additionalLinkTags={ADDITIONAL_LINK_TAGS}
+  additionalMetaTags={ADDITIONAL_META_TAGS}
+  jsonLd={JSON_LD}
 />
 
 <script is:inline>

@@ -1,99 +1,147 @@
-# Northsoon — Agency Website
+# Northsoon
 
-Corporate website for **Northsoon**, a web development agency. Built for performance, scalability, and clean presentation.
+Source code for [northsoon.com](https://northsoon.com) — the public-facing site of
+**Northsoon**, an independent studio building websites that load fast, read clearly, and age well.
 
----
-
-## Tech Stack
-
-| Layer              | Technology                                   |
-| :----------------- | :------------------------------------------- |
-| Framework          | [Astro 5](https://astro.build)               |
-| Styling            | [Tailwind CSS v4](https://tailwindcss.com)   |
-| Fonts              | Bricolage Grotesque · Inter Tight (variable) |
-| Image optimization | Sharp                                        |
-| Package manager    | [pnpm](https://pnpm.io)                      |
+The current deployment is a brand-aligned interim site while the full studio site is rebuilt.
+The previous version remains preserved on the [`legacy-site`](https://github.com/) branch.
 
 ---
 
-## Project Structure
+## Tech stack
+
+| Layer            | Technology                                             |
+| :--------------- | :----------------------------------------------------- |
+| Framework        | [Astro 6](https://astro.build) (static)                |
+| Styling          | [Tailwind CSS v4](https://tailwindcss.com)             |
+| Typography       | Geist · Inter · Geist Mono (variable, via Fontsource)  |
+| SEO              | [`@northsoon/astro-seo`](https://www.npmjs.com/package/@northsoon/astro-seo) |
+| Icons            | [`@northsoon/phosphor-icons-astro`](https://www.npmjs.com/package/@northsoon/phosphor-icons-astro) |
+| Image processing | [Sharp](https://sharp.pixelplumbing.com)               |
+| Package manager  | [Bun](https://bun.com)                                 |
+| Hosting          | [Vercel](https://vercel.com) (static, with Speed Insights + Analytics) |
+
+---
+
+## Project structure
 
 ```text
-northsoon-website/
-├── public/                   # Static assets (favicon, images, etc.)
+northsoon-web/
+├── public/                       # Static runtime assets (favicons, manifest, OG banner)
 ├── src/
-│   ├── assets/               # Processed assets (imported in components)
+│   ├── assets/
+│   │   └── brand/                # Brand source files (gitignored — see "Brand assets" below)
 │   ├── components/
-│   │   ├── global/
-│   │   │   ├── Navigation.astro
-│   │   │   └── Footer.astro
-│   │   └── landing/
-│   │       ├── Hero.astro
-│   │       ├── Banner.astro
-│   │       ├── About.astro
-│   │       ├── Services.astro
-│   │       ├── Work.astro
-│   │       ├── Testimonials.astro
-│   │       └── Cta.astro
+│   │   ├── BackLink.astro        # Reusable "← Back" link
+│   │   ├── BaseHead.astro        # <head> wrapper using @northsoon/astro-seo
+│   │   ├── Logo.astro            # Inline brand mark (mountain)
+│   │   ├── SiteFooter.astro      # Centered footer with copyright + LinkedIn link
+│   │   └── SiteNav.astro         # Top nav: logo, About link, theme toggle
+│   ├── data/
+│   │   ├── packages.ts           # Open-source packages listed on /work/tooling
+│   │   ├── projects.ts           # Items rendered in "On the bench" on home
+│   │   └── site-config.ts        # Site URL, SEO defaults, founder, contact, JSON-LD, etc.
 │   ├── layouts/
-│   │   └── BaseLayout.astro  # Root HTML shell + BaseHead
+│   │   └── BaseLayout.astro      # HTML shell + analytics + speed insights
 │   ├── pages/
-│   │   └── index.astro       # Landing page
+│   │   ├── index.astro           # Home
+│   │   ├── about.astro           # /about
+│   │   ├── 404.astro             # Custom not-found
+│   │   └── work/                 # /work/* internal project pages
+│   │       ├── maos.astro
+│   │       ├── studio-site.astro
+│   │       └── tooling.astro
 │   └── styles/
-│       └── global.css        # Tailwind directives & base styles
-├── astro.config.mjs
+│       └── global.css            # Tailwind directives, design tokens, scrollbar styling
+├── tools/
+│   ├── generate-icons.ts         # Generates runtime favicons + social logos from brand SVG
+│   ├── icon-library/             # (gitignored) icon references kept locally
+│   └── social-logos/             # (gitignored) generated PNGs for LinkedIn, X, GitHub, etc.
+├── astro.config.mjs              # Astro config with Tailwind + sitemap
+├── vercel.json                   # Security headers
 ├── package.json
-└── tsconfig.json
+└── tsconfig.json                 # Path alias: @/* → src/*
 ```
 
 ---
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js >= 18
-- pnpm >= 9
+- [Bun](https://bun.com) ≥ 1.3
 
-### Install dependencies
-
-```sh
-pnpm install
-```
-
-### Development
+### Install
 
 ```sh
-pnpm dev
+bun install
 ```
 
-Opens a local dev server at `http://localhost:4321` with hot-reload.
-
-### Production build
+### Develop
 
 ```sh
-pnpm build
+bun run dev
 ```
 
-Outputs a fully static site to `./dist/`.
+Local server at `http://localhost:4321` with hot reload.
 
-### Preview production build locally
+### Build
 
 ```sh
-pnpm preview
+bun run build
 ```
+
+Static output to `./dist/`.
+
+### Preview production build
+
+```sh
+bun run preview
+```
+
+### Regenerate icons
+
+```sh
+bun run icons
+```
+
+Reads `src/assets/brand/logo-mark.svg` and outputs:
+
+- **Runtime icons** to `public/` (favicons, PWA icons, apple-touch-icon)
+- **Social logos** to `tools/social-logos/` (LinkedIn 400, Facebook 400, X 800, npm 200, GitHub 500 — gitignored, upload manually to each platform)
+
+Requires `src/assets/brand/` to exist locally (it's gitignored — see below).
 
 ---
 
-## Available Commands
+## Available commands
 
-| Command                        | Description                          |
-| :----------------------------- | :----------------------------------- |
-| `pnpm dev`                     | Start dev server at `localhost:4321` |
-| `pnpm build`                   | Build for production to `./dist/`    |
-| `pnpm preview`                 | Preview the production build locally |
-| `pnpm astro check`             | Type-check all `.astro` files        |
-| `pnpm astro add <integration>` | Add an official Astro integration    |
+| Command            | Description                                                  |
+| :----------------- | :----------------------------------------------------------- |
+| `bun run dev`      | Start dev server at `localhost:4321`                         |
+| `bun run build`    | Build to `./dist/`                                           |
+| `bun run preview`  | Preview production build locally                             |
+| `bun run icons`    | Regenerate favicons + social logos from `logo-mark.svg`      |
+| `bun run astro`    | Run any Astro CLI command (e.g. `bun run astro check`)       |
+
+---
+
+## Brand assets
+
+The brand source files (`logo.svg`, `logo-mark.svg`, brand docs) live in `src/assets/brand/`
+and are **gitignored**. They are the canonical reference for the visual identity but are
+not required at runtime — `Logo.astro` defines the mark inline as SVG, and all favicons
+in `public/` are already committed.
+
+If you clone this repo on a fresh machine and need to regenerate icons, copy the brand
+folder from your local archive into `src/assets/brand/` before running `bun run icons`.
+
+---
+
+## Deployment
+
+Pushes to `main` auto-deploy to Vercel. The `legacy-site` branch preserves the previous
+Northsoon site and is intended for a separate Vercel project serving `old.northsoon.com`.
 
 ---
 

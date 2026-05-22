@@ -1,97 +1,97 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
+import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
+import { PROJECTS } from "@/data/projects";
+import { CONTACT_EMAIL } from "@/data/site-config";
 
-const CAPABILITIES = [
-  "web design",
-  "SEO-optimized",
-  "fast loading",
-  "trades & industrial",
-  "Astro + Vercel",
-];
+const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
+const isHttpExternal = (href: string) => /^https?:/.test(href);
+
+const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Project%20inquiry&body=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project.`;
 ---
 
 <BaseLayout>
-  <div class="relative flex min-h-screen flex-col bg-background text-foreground">
-    <!-- grid overlay -->
-    <div
-      class="pointer-events-none absolute inset-0 opacity-[0.04] dark:opacity-[0.025]"
-      style="background-image: linear-gradient(rgb(0 0 0 / 0.3) 1px, transparent 1px), linear-gradient(90deg, rgb(0 0 0 / 0.3) 1px, transparent 1px); background-size: 48px 48px;"
-    >
-    </div>
+  <div class="flex min-h-screen flex-col bg-background text-foreground">
+    <SiteNav />
 
-    <!-- nav -->
-    <nav class="relative z-10 flex items-center justify-between px-6 py-5 sm:px-10">
-      <div class="flex items-center gap-2">
-        <img src="/single_logo.svg" alt="Northsoon" class="size-6" />
-        <span class="text-sm font-semibold tracking-tight">Northsoon</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <button
-          id="theme-toggle"
-          type="button"
-          aria-label="Toggle theme"
-          class="inline-flex size-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition hover:bg-muted"
-        >
-          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 hidden dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      </div>
-    </nav>
+    <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
+      <section class="mb-12 sm:mb-16">
+        <h1 class="font-display text-6xl font-semibold tracking-tight sm:text-7xl">
+          Northsoon
+        </h1>
+        <p class="mt-10 max-w-md text-[15px] leading-relaxed text-muted-foreground">
+          Small independent studio building websites that load fast, read
+          clearly, and age well.
+        </p>
+        <p class="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          — Performance · Clarity · Longevity.
+        </p>
+      </section>
 
-    <!-- hero -->
-    <main class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
-      <span
-        class="mb-10 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
-      >
-        <span class="relative flex size-2">
-          <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-50"></span>
-          <span class="relative inline-flex size-2 rounded-full bg-primary"></span>
-        </span>
-        in development
-      </span>
+      <section class="mb-20">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            On the bench
+          </span>
+          <span class="h-px flex-1 bg-border" aria-hidden="true"></span>
+        </header>
 
-      <h1 class="font-grotesque text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-        Northsoon
-      </h1>
+        <ul class="space-y-8">
+          {PROJECTS.map((p) => {
+            const external = isExternal(p.href);
+            const newTab = isHttpExternal(p.href);
+            return (
+              <li class="grid grid-cols-[2rem_1fr_auto] items-start gap-x-4 sm:gap-x-6">
+                <span class="pt-0.5 font-mono text-xs text-muted-foreground/60" aria-hidden="true">
+                  {p.n}
+                </span>
+                <div class="min-w-0">
+                  <a
+                    href={p.href}
+                    {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    class="group inline-flex items-center gap-1.5 text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    <span class="font-medium">{p.name}</span>
+                    {external ? (
+                      <ArrowUpRight size={12} weight="bold" class="-translate-y-0.5 opacity-50 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+                    ) : (
+                      <ArrowRight size={12} weight="bold" class="opacity-50 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+                    )}
+                  </a>
+                  <p class="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {p.desc}
+                  </p>
+                </div>
+                <span class="pt-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                  {p.status}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
 
-      <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-        We're rebuilding the studio.<br />
-        Fast, SEO-ready websites for trades, construction & industrial — coming soon.
-      </p>
+      <section>
+        <header class="mb-6 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            Get in touch
+          </span>
+          <span class="h-px flex-1 bg-border" aria-hidden="true"></span>
+        </header>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-2">
-        {
-          CAPABILITIES.map((tag) => (
-            <span class="inline-flex items-center rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground">
-              {tag}
-            </span>
-          ))
-        }
-      </div>
-
-      <div class="mt-12">
         <a
-          href="mailto:manuel@northsoon.com?subject=Northsoon%20—%20Project%20inquiry&body=Hi%20Manuel%2C%20I%27d%20like%20to%20talk%20about%20a%20project."
-          class="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:opacity-90"
+          href={mailtoHref}
+          class="group inline-flex items-center gap-2 text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          Get in touch
+          <span class="font-medium">{CONTACT_EMAIL}</span>
+          <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
         </a>
-      </div>
+      </section>
     </main>
 
-    <footer class="relative z-10 flex items-center justify-center gap-1.5 px-6 py-5 text-[11px] text-muted-foreground">
-      <span>Built by</span>
-      <span class="text-foreground/70">Manuel Caballero</span>
-      <span>·</span>
-      <span class="font-mono">northsoon.com</span>
-    </footer>
+    <SiteFooter />
   </div>
-
-  <script is:inline>
-    const btn = document.getElementById("theme-toggle");
-    btn?.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-  </script>
 </BaseLayout>

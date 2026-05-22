@@ -1,0 +1,29 @@
+---
+/**
+ * Northsoon brand mark — mountain with sun-lit and shadow faces.
+ * Inline SVG so it inherits color from CSS custom properties (var(--color-primary))
+ * and stays zero-network-request.
+ *
+ * Pass utility classes via `class` to control size and positioning.
+ *   <Logo class="size-10" />
+ */
+
+interface Props {
+  class?: string;
+  "aria-label"?: string;
+}
+
+const { class: className = "", "aria-label": ariaLabel } = Astro.props;
+const decorative = !ariaLabel;
+---
+
+<svg
+  viewBox="0 0 80 80"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class={className}
+  {...(decorative ? { "aria-hidden": "true" } : { role: "img", "aria-label": ariaLabel })}
+>
+  <polygon points="40,12 6,68 40,68" fill="var(--color-primary)" />
+  <polygon points="40,12 74,68 40,68" fill="var(--color-primary)" opacity="0.35" />
+</svg>

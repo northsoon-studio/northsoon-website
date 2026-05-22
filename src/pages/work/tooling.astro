@@ -1,0 +1,89 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import BackLink from "@/components/BackLink.astro";
+import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
+import { PACKAGES } from "@/data/packages";
+import { SITE_URL } from "@/data/site-config";
+---
+
+<BaseLayout
+  title="Open-source tooling · Northsoon"
+  description="Astro helpers we maintain and ship publicly: SEO meta and JSON-LD, and Phosphor icons as typed components. Both MIT-licensed and used on this site."
+  canonical={`${SITE_URL}/work/tooling`}
+>
+  <div class="flex min-h-screen flex-col bg-background text-foreground">
+    <SiteNav />
+
+    <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
+      <BackLink />
+
+      <header class="mt-10">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          Work · Tooling
+        </p>
+        <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
+          Open-source tooling
+        </h1>
+      </header>
+
+      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-muted-foreground">
+        <p>
+          We build websites on top of a small set of Astro helpers that we
+          maintain and ship publicly. If you work with Astro, they may be
+          useful to you too. Both are MIT-licensed and used on this site.
+        </p>
+      </section>
+
+      <section class="mt-12">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            Packages
+          </span>
+          <span class="h-px flex-1 bg-border" aria-hidden="true"></span>
+        </header>
+
+        <ul class="space-y-10">
+          {PACKAGES.map((pkg) => (
+            <li>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 class="font-mono text-sm font-medium text-foreground break-all">
+                  {pkg.name}
+                </h2>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                  {pkg.version}
+                </span>
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {pkg.desc}
+              </p>
+              <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+                <a
+                  href={pkg.npm}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span>npm</span>
+                  <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+                </a>
+                <a
+                  href={pkg.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span>github</span>
+                  <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

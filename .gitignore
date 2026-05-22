@@ -5,3 +5,9 @@ dist
 .vscode
 .claude
 .learning
+
+# Local-only design assets (not for production)
+tools/icon-library/
+tools/social-logos/
+src/pages/logos.astro
+src/assets/brand/
