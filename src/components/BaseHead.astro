@@ -2,18 +2,18 @@
 import "../styles/global.css";
 import { AstroHead } from "@northsoon/astro-seo";
 ---
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <AstroHead
-  title="Northsoon Studio"
-  description="Web design agency specializing in fast, SEO-optimized websites for trades, construction, and industrial businesses."
+<AstroHead
+  title="Northsoon — In development"
+  description="Northsoon is being rebuilt. A web design studio for trades, construction, and industrial businesses. Get in touch."
   canonical="https://northsoon.com"
   openGraph={{
     url: "https://northsoon.com/",
     type: "website",
-    title: "Northsoon - Web Design & Development",
-    description: "Web design agency specializing in fast, SEO-optimized websites for trades, construction, and industrial businesses.",
+    title: "Northsoon — In development",
+    description: "Northsoon is being rebuilt. A web design studio for trades, construction, and industrial businesses.",
     site_name: "Northsoon",
     images: [
       {
@@ -34,8 +34,8 @@ import { AstroHead } from "@northsoon/astro-seo";
     { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-icon-180x180.png" },
   ]}
   additionalMetaTags={[
-    { name: "theme-color", content: "#BCC2F7" },
-    { name: "author", content: "Manuel - Northsoon" },
+    { name: "theme-color", content: "#0a0a0a" },
+    { name: "author", content: "Manuel — Northsoon" },
   ]}
   jsonLd={{
     "@context": "https://schema.org",
@@ -47,5 +47,12 @@ import { AstroHead } from "@northsoon/astro-seo";
   }}
 />
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script async src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+<script is:inline>
+  (() => {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (stored === "dark" || (!stored && prefersDark)) {
+      document.documentElement.classList.add("dark");
+    }
+  })();
+</script>

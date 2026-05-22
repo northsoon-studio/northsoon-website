@@ -1,16 +1,97 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Hero from "@/components/landing/Hero.astro";
-import Work from "@/components/landing/Work.astro";
-import About from "@/components/landing/About.astro";
-import Services from "@/components/landing/Services.astro";
-import Cta from "@/components/landing/Cta.astro";
+
+const CAPABILITIES = [
+  "web design",
+  "SEO-optimized",
+  "fast loading",
+  "trades & industrial",
+  "Astro + Vercel",
+];
 ---
 
 <BaseLayout>
-	<Hero />
-	<Work />
-	<About />
-	<Services />
-	<Cta>
+  <div class="relative flex min-h-screen flex-col bg-background text-foreground">
+    <!-- grid overlay -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.04] dark:opacity-[0.025]"
+      style="background-image: linear-gradient(rgb(0 0 0 / 0.3) 1px, transparent 1px), linear-gradient(90deg, rgb(0 0 0 / 0.3) 1px, transparent 1px); background-size: 48px 48px;"
+    >
+    </div>
+
+    <!-- nav -->
+    <nav class="relative z-10 flex items-center justify-between px-6 py-5 sm:px-10">
+      <div class="flex items-center gap-2">
+        <img src="/single_logo.svg" alt="Northsoon" class="size-6" />
+        <span class="text-sm font-semibold tracking-tight">Northsoon</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+          class="inline-flex size-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition hover:bg-muted"
+        >
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 hidden dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <main class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+      <span
+        class="mb-10 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
+      >
+        <span class="relative flex size-2">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-50"></span>
+          <span class="relative inline-flex size-2 rounded-full bg-primary"></span>
+        </span>
+        in development
+      </span>
+
+      <h1 class="font-grotesque text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+        Northsoon
+      </h1>
+
+      <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
+        We're rebuilding the studio.<br />
+        Fast, SEO-ready websites for trades, construction & industrial — coming soon.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-2">
+        {
+          CAPABILITIES.map((tag) => (
+            <span class="inline-flex items-center rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="mt-12">
+        <a
+          href="mailto:manuel@northsoon.com?subject=Northsoon%20—%20Project%20inquiry&body=Hi%20Manuel%2C%20I%27d%20like%20to%20talk%20about%20a%20project."
+          class="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:opacity-90"
+        >
+          Get in touch
+        </a>
+      </div>
+    </main>
+
+    <footer class="relative z-10 flex items-center justify-center gap-1.5 px-6 py-5 text-[11px] text-muted-foreground">
+      <span>Built by</span>
+      <span class="text-foreground/70">Manuel Caballero</span>
+      <span>·</span>
+      <span class="font-mono">northsoon.com</span>
+    </footer>
+  </div>
+
+  <script is:inline>
+    const btn = document.getElementById("theme-toggle");
+    btn?.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
 </BaseLayout>

@@ -4,50 +4,63 @@
 @import "@fontsource-variable/inter-tight";
 @import "tailwindcss";
 
-@theme {
-    --font-sans: 'Inter Tight', sans-serif;
-    --font-grotesque: 'Bricolage Grotesque', sans-serif;
-    --font-space: 'Space Grotesk Variable', sans-serif;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme {
---color-surface-primary: #F2F3FD;
---color-surface-secondary: #FFFFFF;
---color-surface-accent: #2139E1;
-
---color-text-primary: #2139E1;
---color-text-secondary: #122087;
---color-text-inverted: #FFFFFF;
---color-text-accent: #FF704F;
---color-text-base: #000000;
-
---color-brand-primary: #2139E1;
---color-brand-hover: #122087;
---color-brand-secondary: #F15B40;
---color-brand-hover-secondary: #C22400;
-
---color-border-primary: #BCC2F7;
---color-border-secondary: #F15B40;
---color-border-muted: #F2F3FD;
-}
-
-
-.animate-marquee {
-    animation: marquee 30s linear infinite;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  --font-sans: 'Inter Tight', sans-serif;
+  --font-grotesque: 'Bricolage Grotesque', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @supports (font-variation-settings: normal) {
-    @theme {
-        --font-sans: 'Inter Tight Variable', sans-serif;
-        --font-grotesque: 'Bricolage Grotesque Variable', sans-serif;
-    }
+  @theme {
+    --font-sans: 'Inter Tight Variable', sans-serif;
+    --font-grotesque: 'Bricolage Grotesque Variable', sans-serif;
+  }
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --border: oklch(0.92 0.004 286.32);
+  --primary: oklch(0.488 0.243 264.376);
+  --primary-foreground: oklch(0.985 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --border: oklch(1 0 0 / 10%);
+  --primary: oklch(0.623 0.214 259.815);
+  --primary-foreground: oklch(0.97 0.014 254.604);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  html {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
 }
