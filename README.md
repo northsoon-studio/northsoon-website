@@ -53,10 +53,6 @@ northsoon-web/
 │   │       └── tooling.astro
 │   └── styles/
 │       └── global.css            # Tailwind directives, design tokens, scrollbar styling
-├── tools/
-│   ├── generate-icons.ts         # Generates runtime favicons + social logos from brand SVG
-│   ├── icon-library/             # (gitignored) icon references kept locally
-│   └── social-logos/             # (gitignored) generated PNGs for LinkedIn, X, GitHub, etc.
 ├── astro.config.mjs              # Astro config with Tailwind + sitemap
 ├── vercel.json                   # Security headers
 ├── package.json
@@ -99,19 +95,6 @@ Static output to `./dist/`.
 bun run preview
 ```
 
-### Regenerate icons
-
-```sh
-bun run icons
-```
-
-Reads `src/assets/brand/logo-mark.svg` and outputs:
-
-- **Runtime icons** to `public/` (favicons, PWA icons, apple-touch-icon)
-- **Social logos** to `tools/social-logos/` (LinkedIn 400, Facebook 400, X 800, npm 200, GitHub 500 — gitignored, upload manually to each platform)
-
-Requires `src/assets/brand/` to exist locally (it's gitignored — see below).
-
 ---
 
 ## Available commands
@@ -121,7 +104,6 @@ Requires `src/assets/brand/` to exist locally (it's gitignored — see below).
 | `bun run dev`      | Start dev server at `localhost:4321`                         |
 | `bun run build`    | Build to `./dist/`                                           |
 | `bun run preview`  | Preview production build locally                             |
-| `bun run icons`    | Regenerate favicons + social logos from `logo-mark.svg`      |
 | `bun run astro`    | Run any Astro CLI command (e.g. `bun run astro check`)       |
 
 ---
@@ -132,9 +114,6 @@ The brand source files (`logo.svg`, `logo-mark.svg`, brand docs) live in `src/as
 and are **gitignored**. They are the canonical reference for the visual identity but are
 not required at runtime — `Logo.astro` defines the mark inline as SVG, and all favicons
 in `public/` are already committed.
-
-If you clone this repo on a fresh machine and need to regenerate icons, copy the brand
-folder from your local archive into `src/assets/brand/` before running `bun run icons`.
 
 ---
 

@@ -6,8 +6,7 @@ dist
 .claude
 .learning
 
-# Local-only design assets (not for production)
-tools/icon-library/
-tools/social-logos/
+# Local-only design assets and build tooling (not for production)
+tools/
 src/pages/logos.astro
 src/assets/brand/
