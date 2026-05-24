@@ -21,7 +21,7 @@ import Logo from "@/components/Logo.astro";
       id="theme-toggle"
       type="button"
       aria-label="Toggle color theme"
-      class="inline-flex size-9 items-center justify-center rounded-md bg-background text-muted-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      class="inline-flex size-9 items-center justify-center rounded-md bg-background text-muted-foreground transition pointer-fine:hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <Sun size={16} weight="bold" color="#eab308" class="hidden dark:block" />
       <Moon size={16} weight="bold"  color="#475569" class="dark:hidden" />
@@ -34,5 +34,6 @@ import Logo from "@/components/Logo.astro";
   btn?.addEventListener("click", () => {
     const isDark = document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+    btn.blur();
   });
 </script>

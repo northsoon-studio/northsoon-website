@@ -28,9 +28,9 @@ export const PROJECTS: Project[] = [
   },
   {
     n: "03",
-    name: "MAOS",
-    desc: "Internal R&D. Building a minimal agent OS.",
-    status: "lab",
-    href: "/work/maos",
+    name: "Lab",
+    desc: "Internal R&D. Small experiments in agent tooling.",
+    status: "internal",
+    href: "/work/lab",
   },
 ];

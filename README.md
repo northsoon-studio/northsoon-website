@@ -48,7 +48,7 @@ northsoon-web/
 │   │   ├── about.astro           # /about
 │   │   ├── 404.astro             # Custom not-found
 │   │   └── work/                 # /work/* internal project pages
-│   │       ├── maos.astro
+│   │       ├── lab.astro
 │   │       ├── studio-site.astro
 │   │       └── tooling.astro
 │   └── styles/
