@@ -1,12 +1,5 @@
 ---
-/**
- * Northsoon brand mark — mountain with sun-lit and shadow faces.
- * Inline SVG so it inherits color from CSS custom properties (var(--color-primary))
- * and stays zero-network-request.
- *
- * Pass utility classes via `class` to control size and positioning.
- *   <Logo class="size-10" />
- */
+// Inline SVG so the mark inherits `currentColor`-style theming via var(--color-primary) without a network request.
 
 interface Props {
   class?: string;

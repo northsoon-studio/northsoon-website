@@ -1,10 +1,3 @@
-/**
- * Site-wide configuration. All hardcoded site metadata, SEO defaults,
- * contact info, and head-level config live here.
- *
- * Consumers: components/BaseHead, SiteFooter, page-level layouts.
- */
-
 export const SITE_URL = "https://northsoon.com";
 export const CONTACT_EMAIL = "manuel@northsoon.com";
 

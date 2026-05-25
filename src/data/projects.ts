@@ -1,8 +1,3 @@
-/**
- * "On the bench" — items shown on the home page.
- * Each item links to an internal work page.
- */
-
 export type Project = {
   n: string;
   name: string;

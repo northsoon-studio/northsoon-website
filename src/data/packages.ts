@@ -1,8 +1,3 @@
-/**
- * Open-source Astro packages we maintain.
- * Listed on the /work/tooling page.
- */
-
 export type Package = {
   name: string;
   version: string;
