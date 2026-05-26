@@ -14,14 +14,14 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
   description="Northsoon is an independent studio focused on marketing sites, landing pages, and conversion-focused websites that load fast, read clearly, and age well. Founded by Manuel Caballero."
   canonical={`${SITE_URL}/about`}
 >
-  <div class="flex min-h-screen flex-col bg-background text-foreground">
+  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
       <BackLink />
 
       <header class="mt-10">
-        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
           Northsoon · About
         </p>
         <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
@@ -29,42 +29,50 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
         </h1>
       </header>
 
-      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-muted-foreground">
+      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-brand-muted-foreground">
         <p>
-          Northsoon is an independent studio building websites that load fast,
-          read clearly, and age well.
+          Most web projects fail in the same way: a studio takes a brief,
+          builds something, delivers it, and disappears. The client is left
+          with a site they don't fully understand, can't easily update, and
+          that stops evolving the moment the invoice is paid.
         </p>
         <p>
-          We focus on marketing sites, landing pages, and conversion-focused
-          websites for businesses that want their online presence done right.
+          Northsoon works differently. We partner with founders and small
+          teams for the long run — involved in the thinking, not just the
+          building. We want to understand your business well enough to push
+          back when something won't work and suggest what will.
         </p>
         <p>
-          We work small on purpose. Every project gets one set of hands from
-          start to finish, and undivided attention while it's on the bench.
-          The sites we ship favor performance, clarity, and longevity over
-          flash.
+          We take on a small number of projects at a time. Not to seem
+          exclusive — because it's the only way to do this properly. Every
+          project gets our full attention, and every client gets direct
+          access to the person doing the work.
         </p>
         <p>
-          We build with Astro and Tailwind, open-source the small helpers we
-          make along the way, and occasionally tinker with internal R&amp;D
-          when an idea is worth exploring.
+          We build with Astro and Tailwind. The sites we ship are fast,
+          maintainable, and designed to stay relevant as your business grows —
+          not just to look good on launch day.
         </p>
-        <p class="text-foreground">
+        <p class="text-brand-foreground">
           Founded by {FOUNDER.name}. Remote, worldwide. Open for new projects.
         </p>
       </section>
 
       <section class="mt-16">
         <header class="mb-6 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            Get in touch
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Start a project
           </span>
-          <span class="h-px flex-1 bg-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
         </header>
+
+        <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-brand-muted-foreground">
+          If this sounds like the kind of partnership you're looking for, let's talk.
+        </p>
 
         <a
           href={mailtoHref}
-          class="group inline-flex items-center gap-2 text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          class="group inline-flex items-center gap-2 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
         >
           <span class="font-medium">{CONTACT_EMAIL}</span>
           <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />

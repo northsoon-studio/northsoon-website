@@ -14,7 +14,7 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
 ---
 
 <BaseLayout>
-  <div class="flex min-h-screen flex-col bg-background text-foreground">
+  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
@@ -22,21 +22,22 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
         <h1 class="font-display text-6xl font-semibold tracking-tight sm:text-7xl">
           Northsoon
         </h1>
-        <p class="mt-10 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-          Small independent studio building websites that load fast, read
-          clearly, and age well.
+        <p class="mt-10 max-w-md text-[15px] leading-relaxed text-brand-muted-foreground">
+          Northsoon is a web studio built for the long run. We work with
+          clients who want more than a site: a partner for their web
+          presence, performance, and growth.
         </p>
-        <p class="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          — Performance · Clarity · Longevity.
+        <p class="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          A few projects at a time. Done properly.
         </p>
       </section>
 
       <section class="mb-20">
         <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            On the bench
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Work
           </span>
-          <span class="h-px flex-1 bg-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
         </header>
 
         <ul class="space-y-8">
@@ -45,14 +46,14 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
             const newTab = isHttpExternal(p.href);
             return (
               <li class="grid grid-cols-[2rem_1fr_auto] items-start gap-x-4 sm:gap-x-6">
-                <span class="pt-0.5 font-mono text-xs text-muted-foreground" aria-hidden="true">
+                <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">
                   {p.n}
                 </span>
                 <div class="min-w-0">
                   <a
                     href={p.href}
                     {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    class="group inline-flex items-center gap-1.5 text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    class="group inline-flex items-center gap-1.5 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
                   >
                     <span class="font-medium">{p.name}</span>
                     {external ? (
@@ -61,11 +62,11 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
                       <ArrowRight size={12} weight="bold" class="opacity-50 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
                     )}
                   </a>
-                  <p class="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">
                     {p.desc}
                   </p>
                 </div>
-                <span class="pt-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                <span class="pt-1 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground">
                   {p.status}
                 </span>
               </li>
@@ -74,17 +75,66 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=Northsoon%20%E2%80%94%20Proj
         </ul>
       </section>
 
+      <section class="mb-20">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            How we work
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <ul class="space-y-8">
+          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">—</span>
+            <div class="min-w-0">
+              <p class="font-medium text-brand-foreground">We start with your business, not your brief</p>
+              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">
+                Before anything gets designed or built, we want to understand
+                what you're trying to accomplish and why. A site that doesn't
+                serve your goals is just decoration.
+              </p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">—</span>
+            <div class="min-w-0">
+              <p class="font-medium text-brand-foreground">You're involved throughout</p>
+              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">
+                Not just at kickoff and delivery. We work in the open —
+                sharing progress, asking questions, adjusting as we go.
+                No surprises at the end.
+              </p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">—</span>
+            <div class="min-w-0">
+              <p class="font-medium text-brand-foreground">We stay after launch</p>
+              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">
+                A site that's "done" is already falling behind. We're
+                interested in the long game — keeping what we ship
+                relevant as your business evolves.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       <section>
         <header class="mb-6 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            Get in touch
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Work with us
           </span>
-          <span class="h-px flex-1 bg-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
         </header>
+
+        <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-brand-muted-foreground">
+          If that sounds like how you want to work, reach out and tell us what you're building.
+        </p>
 
         <a
           href={mailtoHref}
-          class="group inline-flex items-center gap-2 text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          class="group inline-flex items-center gap-2 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
         >
           <span class="font-medium">{CONTACT_EMAIL}</span>
           <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
