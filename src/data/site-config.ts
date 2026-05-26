@@ -11,9 +11,9 @@ export const SOCIAL = {
 };
 
 export const DEFAULT_SEO = {
-  title: "Northsoon — Independent web studio",
+  title: "Northsoon · Independent web studio",
   description:
-    "Northsoon is a web studio built for the long run. We work with clients who want more than a site: a partner for their web presence, performance, and growth.",
+    "Northsoon is a web studio built for the long run. We partner with founders, not just build sites.",
   ogImage: `${SITE_URL}/social_banner.png`,
 };
 

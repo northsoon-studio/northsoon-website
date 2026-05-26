@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
   {
     n: "02",
     name: "Open-source tooling",
-    desc: "Astro helpers we built and ship publicly — SEO, icon sets. Used in production.",
+    desc: "Astro helpers we built and ship publicly: SEO, icon sets. Used in production.",
     status: "open",
     href: "/work/tooling",
   },
