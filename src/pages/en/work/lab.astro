@@ -10,8 +10,8 @@ const t = useTranslations('en');
 ---
 
 <BaseLayout
-  title="AI Internal Tool · Northsoon"
-  description="An internal lab with agents, scripts, and simple workflows to reduce repetitive work."
+  title={`${t('work.lab.h1')} · Northsoon`}
+  description={t('work.lab.p1')}
   canonical={`${SITE_URL}/en/work/lab/`}
   lang="en"
   alternates={[
@@ -19,6 +19,7 @@ const t = useTranslations('en');
     { hreflang: "en", href: `${SITE_URL}/en/work/lab/` },
     { hreflang: "x-default", href: `${SITE_URL}/work/lab/` },
   ]}
+  noindex={true}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />

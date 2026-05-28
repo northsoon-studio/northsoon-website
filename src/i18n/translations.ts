@@ -12,7 +12,7 @@ export const ui = {
     "hero.subtitle": "Empezamos pequeño. Entregamos algo usable.",
 
     // Section labels
-    "section.work": "Built in-house",
+    "section.work": "Proyectos",
     "section.how": "Cómo trabajamos",
     "section.help": "Con qué ayudamos",
     "section.cta": "Trabaja con nosotros",
@@ -43,9 +43,9 @@ export const ui = {
       "Pequeños flujos para reducir tareas repetitivas y ahorrar tiempo en el trabajo diario.",
 
     // CTA
-    "cta.title": "Cuéntame qué necesitas",
+    "cta.title": "Cuéntanos qué necesitas",
     "cta.desc":
-      "Si necesitas una web, un formulario automatizado o tienes una tarea manual que quieres simplificar, escríbeme. Lo vemos sin compromiso.",
+      "Si necesitas una web, un formulario automatizado o tienes una tarea manual que quieres simplificar, escríbenos. Lo vemos sin compromiso.",
 
     // About page
     "about.breadcrumb": "Northsoon · Nosotros",
@@ -56,18 +56,16 @@ export const ui = {
       "Empezamos por soluciones simples: una web clara, una landing para captar consultas, un formulario bien conectado o una automatización que quite trabajo manual.",
     "about.p3":
       "No intentamos vender plataformas gigantes. Preferimos partir con un problema concreto, construir algo útil y mejorar desde ahí si el negocio lo necesita.",
-    "about.p4":
-      "Fundado por Manuel Caballero en San Esteban, Los Andes, Chile. Northsoon combina experiencia operativa con desarrollo web y automatización simple para ayudar a negocios pequeños a ahorrar tiempo y ordenar mejor su trabajo.",
     "about.p4.before": "Fundado por",
     "about.p4.after":
-      "en San Esteban, Los Andes, Chile. Northsoon combina experiencia operativa con desarrollo web y automatización simple para ayudar a negocios pequeños a ahorrar tiempo y ordenar mejor su trabajo.",
+      "en San Esteban, Los Andes, Chile. El objetivo es simple: ayudar a negocios pequeños a tener presencia online, verse profesionales y perder menos tiempo en trabajo repetitivo.",
     "about.cta.label": "Empezar simple",
     "about.cta.desc":
       "Si necesitas una web o quieres simplificar una tarea repetitiva, hablemos.",
 
     // Shared
     back: "Volver",
-    "mailto.subject": "NorthSoon - Consulta de proyecto",
+    "mailto.subject": "Northsoon - Consulta de proyecto",
 
     // SEO
     "seo.home.title": "Northsoon · Sitios web y automatización simple",
@@ -78,24 +76,23 @@ export const ui = {
       "Northsoon es un estudio independiente fundado por Manuel Caballero en San Esteban, Los Andes, Chile. Creamos sitios web rápidos y herramientas simples para negocios pequeños.",
 
     // Work pages
-    "work.studio.breadcrumb": "Ejemplos · Sitio web de Northsoon",
-    "work.studio.h1": "Sitio web de Northsoon",
-    "work.studio.status": "en vivo",
+    "work.studio.breadcrumb": "Proyectos · Northsoon.com",
+    "work.studio.h1": "Northsoon.com",
+    "work.studio.status": "activo",
     "work.studio.p1":
       "Este es el sitio real de Northsoon, construido con Astro, Tailwind CSS y Vercel.",
     "work.studio.p2":
       "El diseño busca ser rápido, legible y fácil de mantener: el tipo de base simple que también sirve para negocios pequeños.",
     "work.studio.p3":
       "Una versión anterior del sitio sigue disponible para referencia:",
-    "work.studio.p4": "Iterando el sitio en público.",
 
-    "work.tooling.breadcrumb": "Ejemplos · Herramientas",
-    "work.tooling.h1": "Herramientas para Astro",
+    "work.tooling.breadcrumb": "Proyectos · Astro tools",
+    "work.tooling.h1": "Astro tools",
     "work.tooling.intro":
       "Construimos sitios sobre un conjunto de helpers de Astro que mantenemos y publicamos públicamente. Ambos tienen licencia MIT y los usamos en este sitio.",
     "work.tooling.packages": "Paquetes",
 
-    "work.lab.breadcrumb": "Ejemplos · Laboratorio",
+    "work.lab.breadcrumb": "Proyectos · Laboratorio",
     "work.lab.h1": "Laboratorio de automatización",
     "work.lab.status": "interno",
     "work.lab.p1":
@@ -117,9 +114,9 @@ export const ui = {
     "hero.subtitle": "Start small. Ship something useful.",
 
     // Section labels
-    "section.work": "Built in-house",
+    "section.work": "Projects",
     "section.how": "How we work",
-    "section.help": "What we can build",
+    "section.help": "What we help with",
     "section.cta": "Work with us",
 
     // How we work
@@ -148,7 +145,7 @@ export const ui = {
       "Small workflows that reduce repetitive tasks and save time in day-to-day work.",
 
     // CTA
-    "cta.title": "Tell me what you need",
+    "cta.title": "Tell us what you need",
     "cta.desc":
       "If you need a website, an automated form, or have a manual task you want to simplify, send a note. We can look at it with no commitment.",
 
@@ -161,18 +158,16 @@ export const ui = {
       "We start with simple solutions: a clear website, a landing page for inquiries, a well-connected form, or an automation that removes manual work.",
     "about.p3":
       "We do not try to sell huge platforms. We prefer to start with one concrete problem, build something useful, and improve from there if the business needs it.",
-    "about.p4":
-      "Founded by Manuel Caballero in San Esteban, Los Andes, Chile. Northsoon combines operational experience with web development and simple automation to help small businesses save time and organize their work better.",
     "about.p4.before": "Founded by",
     "about.p4.after":
-      "in San Esteban, Los Andes, Chile. Northsoon combines operational experience with web development and simple automation to help small businesses save time and organize their work better.",
+      "in San Esteban, Los Andes, Chile. The goal is simple: help small businesses get online, look professional, and spend less time on repetitive work.",
     "about.cta.label": "Start simple",
     "about.cta.desc":
       "If you need a website or want to simplify a repetitive task, let's talk.",
 
     // Shared
     back: "Back",
-    "mailto.subject": "NorthSoon - Project inquiry",
+    "mailto.subject": "Northsoon - Project inquiry",
 
     // SEO
     "seo.home.title": "Northsoon · Websites and simple automation",
@@ -183,7 +178,7 @@ export const ui = {
       "Northsoon is an independent studio founded by Manuel Caballero in San Esteban, Los Andes, Chile. We build fast websites and simple tools for small businesses.",
 
     // Work pages
-    "work.studio.breadcrumb": "Examples · Northsoon website",
+    "work.studio.breadcrumb": "Projects · Northsoon website",
     "work.studio.h1": "Northsoon website",
     "work.studio.status": "live",
     "work.studio.p1":
@@ -192,15 +187,14 @@ export const ui = {
       "The design is fast, readable, and easy to maintain: the kind of simple foundation that also works well for small businesses.",
     "work.studio.p3":
       "The previous version of the site is still available for reference:",
-    "work.studio.p4": "Iterating the site in public.",
 
-    "work.tooling.breadcrumb": "Examples · Tooling",
-    "work.tooling.h1": "Astro tooling",
+    "work.tooling.breadcrumb": "Projects · Tools",
+    "work.tooling.h1": "Astro tools",
     "work.tooling.intro":
       "We build websites on top of a small set of Astro helpers that we maintain and ship publicly. Both are MIT-licensed and used on this site.",
     "work.tooling.packages": "Packages",
 
-    "work.lab.breadcrumb": "Examples · Lab",
+    "work.lab.breadcrumb": "Projects · Lab",
     "work.lab.h1": "Automation lab",
     "work.lab.status": "internal",
     "work.lab.p1":
@@ -226,46 +220,46 @@ export const projects = {
     {
       n: "01",
       name: "Northsoon.com",
-      desc: "El propio sitio de Northsoon: rápido, simple y construido con Astro como ejemplo de una presencia profesional liviana.",
+      desc: "Este sitio. Construido con Astro, Tailwind y Vercel. Rápido, legible y fácil de mantener.",
       status: "website",
       href: "/work/studio-site",
     },
     {
       n: "02",
       name: "Open Source",
-      desc: "Paquetes y helpers para Astro que usamos para construir sitios rápidos, mantenibles y con buen SEO.",
+      desc: "Paquetes para Astro que usamos en cada proyecto. MIT. Publicados y mantenidos.",
       status: "open source",
       href: "/work/tooling",
     },
     {
       n: "03",
-      name: "AI Internal Tool",
-      desc: "Laboratorio propio con agentes, scripts y flujos simples para reducir trabajo repetitivo.",
-      status: "internal tool",
-      href: "/work/lab",
+      name: "Tu proyecto",
+      desc: "Buscamos el primer proyecto de cliente. Simple, concreto, con resultado visible.",
+      status: "disponible",
+      href: "mailto:hello@northsoon.com",
     },
   ],
   en: [
     {
       n: "01",
       name: "Northsoon.com",
-      desc: "The Northsoon site itself: fast, simple, and built with Astro as an example of a lightweight professional presence.",
+      desc: "This site. Built with Astro, Tailwind, and Vercel. Fast, readable, and easy to maintain.",
       status: "website",
       href: "/en/work/studio-site",
     },
     {
       n: "02",
       name: "Open Source",
-      desc: "Astro packages and helpers we use to build fast, maintainable websites with solid SEO.",
+      desc: "Astro packages we use on every project. MIT-licensed. Published and maintained.",
       status: "open source",
       href: "/en/work/tooling",
     },
     {
       n: "03",
-      name: "AI Internal Tool",
-      desc: "An internal lab with agents, scripts, and simple workflows to reduce repetitive work.",
-      status: "internal tool",
-      href: "/en/work/lab",
+      name: "Your project",
+      desc: "Looking for our first client project. Simple, concrete, with a visible result.",
+      status: "available",
+      href: "mailto:hello@northsoon.com",
     },
   ],
 };

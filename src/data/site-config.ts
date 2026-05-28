@@ -13,9 +13,9 @@ export const SOCIAL = {
 };
 
 export const DEFAULT_SEO = {
-  title: "Northsoon · Sitios web y automatización simple",
+  title: "Northsoon · Websites and simple automation",
   description:
-    "Northsoon ayuda a negocios pequeños a tener una web clara, captar más consultas y automatizar tareas repetitivas sin sistemas innecesarios.",
+    "Northsoon helps small businesses get a clear website, generate more inquiries, and automate repetitive tasks without unnecessary systems.",
   ogImage: `${SITE_URL}/social_banner.png`,
 };
 

@@ -7,6 +7,9 @@ import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
 import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
 import type { JsonLdObject } from "@northsoon/astro-seo";
 import { JSON_LD, SITE_URL } from "@/data/site-config";
+import { useTranslations } from "@/i18n/translations";
+
+const t = useTranslations('en');
 
 const title = "@northsoon/astro-seo · SEO for Astro";
 const description =
@@ -71,14 +74,14 @@ const pageJsonLd = [
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
-      <BackLink href="/en/work/tooling/" label="Back" />
+      <BackLink href="/en/work/tooling/" label={t('back')} />
 
       <header class="mt-10">
         <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
-          Open Source · Astro SEO
+          Projects · Astro SEO
         </p>
-        <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-          SEO for Astro, typed and maintainable
+        <h1 class="mt-6 font-display text-4xl font-semibold tracking-tight sm:text-6xl">
+          SEO for Astro
         </h1>
         <p class="mt-8 text-[15px] leading-relaxed text-brand-muted-foreground">
           <code class="font-mono text-brand-foreground">@northsoon/astro-seo</code> is the component we use at Northsoon to keep metadata, Open Graph, Twitter Cards, canonical URLs, hreflang, robots, and JSON-LD in one place.
