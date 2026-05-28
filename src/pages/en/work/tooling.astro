@@ -9,14 +9,14 @@ import { useTranslations } from "@/i18n/translations";
 import { PACKAGES } from "@/data/packages";
 import { SITE_URL } from "@/data/site-config";
 
-const t = useTranslations('es');
+const t = useTranslations('en');
 ---
 
 <BaseLayout
   title={`${t('work.tooling.h1')} · Northsoon`}
   description={t('work.tooling.intro')}
-  canonical={`${SITE_URL}/work/tooling/`}
-  lang="es"
+  canonical={`${SITE_URL}/en/work/tooling/`}
+  lang="en"
   alternates={[
     { hreflang: "es", href: `${SITE_URL}/work/tooling/` },
     { hreflang: "en", href: `${SITE_URL}/en/work/tooling/` },
@@ -27,7 +27,7 @@ const t = useTranslations('es');
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
-      <BackLink href="/" label={t('back')} />
+      <BackLink href="/en/" label={t('back')} />
 
       <header class="mt-10">
         <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
@@ -62,7 +62,7 @@ const t = useTranslations('es');
                 </span>
               </div>
               <p class="mt-2 text-sm leading-relaxed text-brand-muted-foreground">
-                {pkg.desc_es}
+                {pkg.desc}
               </p>
               <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
                 <a
@@ -85,10 +85,10 @@ const t = useTranslations('es');
                 </a>
                 {pkg.name === "@northsoon/astro-seo" && (
                   <a
-                    href="/open-source/astro-seo/"
+                    href="/en/open-source/astro-seo/"
                     class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
                   >
-                    <span>detalle</span>
+                    <span>details</span>
                     <ArrowRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
                   </a>
                 )}

@@ -7,14 +7,14 @@ import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.ast
 import { useTranslations } from "@/i18n/translations";
 import { SITE_URL } from "@/data/site-config";
 
-const t = useTranslations('es');
+const t = useTranslations('en');
 ---
 
 <BaseLayout
   title={`${t('work.studio.h1')} · Northsoon`}
   description={t('work.studio.p1')}
-  canonical={`${SITE_URL}/work/studio-site/`}
-  lang="es"
+  canonical={`${SITE_URL}/en/work/studio-site/`}
+  lang="en"
   alternates={[
     { hreflang: "es", href: `${SITE_URL}/work/studio-site/` },
     { hreflang: "en", href: `${SITE_URL}/en/work/studio-site/` },
@@ -25,7 +25,7 @@ const t = useTranslations('es');
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
-      <BackLink href="/" label={t('back')} />
+      <BackLink href="/en/" label={t('back')} />
 
       <header class="mt-10 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
         <div>

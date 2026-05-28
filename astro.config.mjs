@@ -6,7 +6,24 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://northsoon.com",
-  integrations: [sitemap()],
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: "es",
+        locales: {
+          es: "es-CL",
+          en: "en-US",
+        },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

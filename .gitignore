@@ -5,6 +5,8 @@ dist
 .vscode
 .claude
 .learning
+.strategy
+_internal/
 
 # Local-only design assets and build tooling (not for production)
 tools/

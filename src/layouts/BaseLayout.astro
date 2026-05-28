@@ -2,6 +2,12 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import type { JsonLdObject } from "@northsoon/astro-seo";
+
+type AlternateLink = {
+  hreflang: string;
+  href: string;
+};
 
 interface Props {
   title?: string;
@@ -10,12 +16,29 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  lang?: string;
+  alternates?: AlternateLink[];
+  noindex?: boolean;
+  nofollow?: boolean;
+  jsonLd?: JsonLdObject | JsonLdObject[];
 }
 
-const { title, description, canonical, ogTitle, ogDescription, ogImage } = Astro.props;
+const {
+  title,
+  description,
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  lang = "es",
+  alternates = [],
+  noindex = false,
+  nofollow = false,
+  jsonLd,
+} = Astro.props;
 ---
 
-<html lang="en-US">
+<html lang={lang}>
   <head>
     <BaseHead
       title={title}
@@ -24,6 +47,10 @@ const { title, description, canonical, ogTitle, ogDescription, ogImage } = Astro
       ogTitle={ogTitle}
       ogDescription={ogDescription}
       ogImage={ogImage}
+      alternates={alternates}
+      noindex={noindex}
+      nofollow={nofollow}
+      jsonLd={jsonLd}
     />
     <SpeedInsights />
     <Analytics />

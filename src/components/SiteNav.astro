@@ -1,39 +1,65 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import Sun from "@northsoon/phosphor-icons-astro/icons/Sun.astro";
 import Moon from "@northsoon/phosphor-icons-astro/icons/Moon.astro";
 import Logo from "@/components/Logo.astro";
+import { useTranslations } from "@/i18n/translations";
+import type { Locale } from "@/i18n/translations";
+
+const locale = (Astro.currentLocale ?? 'es') as Locale;
+const t = useTranslations(locale);
+
+const aboutHref = getRelativeLocaleUrl(locale, 'about');
+const homeHref = getRelativeLocaleUrl(locale, '');
+
+const pathname = Astro.url.pathname;
+const alternateLang = locale === 'es' ? 'en' : 'es';
+const canonicalPath = locale === 'en' ? (pathname.replace(/^\/en/, '') || '/') : pathname;
+const alternateHref = getRelativeLocaleUrl(alternateLang, canonicalPath);
 ---
 
-<nav class="mx-auto flex w-full max-w-xl items-center justify-between px-6 py-5">
-  <a href="/" class="inline-flex items-center" aria-label="Northsoon home">
+<nav aria-label={locale === 'es' ? 'Navegación principal' : 'Main navigation'} class="mx-auto flex w-full max-w-xl items-center justify-between px-6 py-5">
+  <a href={homeHref} class="inline-flex items-center" aria-label="Northsoon home">
     <Logo class="size-10" />
   </a>
 
   <div class="flex items-center gap-4 sm:gap-5">
     <a
-      href="/about"
+      href={aboutHref}
       class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground transition hover:text-brand-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
     >
-      About
+      {t('nav.about')}
+    </a>
+
+    <a
+      href={alternateHref}
+      class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground transition hover:text-brand-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+      aria-label={locale === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+    >
+      {t('nav.lang')}
     </a>
 
     <button
       id="theme-toggle"
       type="button"
       aria-label="Toggle color theme"
+      aria-pressed="false"
       class="inline-flex size-9 items-center justify-center rounded-md bg-brand-background text-brand-muted-foreground transition pointer-fine:hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
     >
       <Sun size={16} weight="bold" color="#eab308" class="hidden dark:block" />
-      <Moon size={16} weight="bold"  color="#475569" class="dark:hidden" />
+      <Moon size={16} weight="bold" color="#475569" class="dark:hidden" />
     </button>
   </div>
 </nav>
 
 <script is:inline>
   const btn = document.getElementById("theme-toggle");
+  const isDarkOnLoad = document.documentElement.classList.contains("dark");
+  btn?.setAttribute("aria-pressed", String(isDarkOnLoad));
   btn?.addEventListener("click", () => {
     const isDark = document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+    btn.setAttribute("aria-pressed", String(isDark));
     btn.blur();
   });
 </script>

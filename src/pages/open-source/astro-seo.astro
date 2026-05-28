@@ -1,0 +1,210 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import BackLink from "@/components/BackLink.astro";
+import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
+import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
+import type { JsonLdObject } from "@northsoon/astro-seo";
+import { JSON_LD, SITE_URL } from "@/data/site-config";
+import { useTranslations } from "@/i18n/translations";
+
+const t = useTranslations('es');
+
+const title = "@northsoon/astro-seo · SEO para Astro";
+const description =
+  "Componente SEO para Astro con TypeScript, Open Graph, Twitter Cards, canonical URLs, hreflang, robots y JSON-LD.";
+const canonical = `${SITE_URL}/open-source/astro-seo/`;
+const npmUrl = "https://www.npmjs.com/package/@northsoon/astro-seo";
+const githubUrl = "https://github.com/northsoon-studio/astro-seo";
+
+const pageJsonLd = [
+  JSON_LD,
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: "@northsoon/astro-seo",
+    description,
+    codeRepository: githubUrl,
+    programmingLanguage: "TypeScript",
+    runtimePlatform: "Astro",
+    license: "https://opensource.org/licenses/MIT",
+    url: canonical,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Northsoon",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Open Source",
+        item: `${SITE_URL}/work/tooling/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "@northsoon/astro-seo",
+        item: canonical,
+      },
+    ],
+  },
+] satisfies JsonLdObject[];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="es"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/open-source/astro-seo/` },
+    { hreflang: "en", href: `${SITE_URL}/en/open-source/astro-seo/` },
+    { hreflang: "x-default", href: `${SITE_URL}/open-source/astro-seo/` },
+  ]}
+  jsonLd={pageJsonLd}
+>
+  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
+    <SiteNav />
+
+    <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
+      <BackLink href="/work/tooling/" label={t('back')} />
+
+      <header class="mt-10">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          Proyectos · Astro SEO
+        </p>
+        <h1 class="mt-6 font-display text-4xl font-semibold tracking-tight sm:text-6xl">
+          SEO para Astro
+        </h1>
+        <p class="mt-8 text-[15px] leading-relaxed text-brand-muted-foreground">
+          <code class="font-mono text-brand-foreground">@northsoon/astro-seo</code> es el componente que usamos en Northsoon para mantener metadatos, Open Graph, Twitter Cards, URLs canonical, hreflang, robots y JSON-LD en un solo lugar.
+        </p>
+      </header>
+
+      <section class="mt-12">
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a
+            href={npmUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+          >
+            <span>npm</span>
+            <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+          </a>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+          >
+            <span>github</span>
+            <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+          </a>
+        </div>
+      </section>
+
+      <section class="mt-16">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Qué resuelve
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <div class="space-y-6 text-[15px] leading-relaxed text-brand-muted-foreground">
+          <p>
+            En un sitio Astro es fácil empezar con dos o tres metatags sueltas. El problema aparece cuando tienes varias páginas, idiomas, imágenes sociales, datos estructurados y reglas de indexación distintas.
+          </p>
+          <p>
+            Este paquete centraliza esa capa SEO en un componente tipado, para que cada página declare su intención y el HTML final salga consistente.
+          </p>
+        </div>
+      </section>
+
+      <section class="mt-16">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Incluye
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <ul class="space-y-3">
+          {[
+            "Title, description y canonical URLs",
+            "Open Graph para compartir en redes y mensajería",
+            "Twitter Cards sin duplicar datos innecesarios",
+            "hreflang para sitios multidioma",
+            "noindex, nofollow y robots props",
+            "JSON-LD tipado para datos estructurados",
+          ].map((item) => (
+            <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+              <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">·</span>
+              <p class="text-sm leading-relaxed text-brand-muted-foreground">{item}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mt-16">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Ejemplo
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <pre class="overflow-x-auto rounded-lg border border-brand-border bg-brand-muted p-4 text-xs leading-relaxed text-brand-foreground"><code>{`---
+import { AstroHead } from "@northsoon/astro-seo";
+---
+
+<AstroHead
+  title="Mi página"
+  description="Descripción para buscadores y redes sociales."
+  canonical="https://example.com/"
+  languageAlternates={[
+    { hreflang: "es", href: "https://example.com/" },
+    { hreflang: "en", href: "https://example.com/en/" },
+  ]}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Mi sitio",
+    url: "https://example.com/",
+  }}
+/>`}</code></pre>
+      </section>
+
+      <section class="mt-16">
+        <header class="mb-6 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            Usado aquí
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <p class="mb-6 text-[15px] leading-relaxed text-brand-muted-foreground">
+          Esta misma página está renderizada con <code class="font-mono text-brand-foreground">@northsoon/astro-seo</code>: canonical, hreflang, Open Graph, Twitter Card y JSON-LD salen desde el paquete.
+        </p>
+
+        <a
+          href="/work/tooling/"
+          class="group inline-flex items-center gap-2 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+        >
+          <span class="font-medium">Ver otros paquetes</span>
+          <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+        </a>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
