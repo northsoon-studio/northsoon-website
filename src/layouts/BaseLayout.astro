@@ -10,12 +10,13 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  lang?: string;
 }
 
-const { title, description, canonical, ogTitle, ogDescription, ogImage } = Astro.props;
+const { title, description, canonical, ogTitle, ogDescription, ogImage, lang = 'es' } = Astro.props;
 ---
 
-<html lang="en-US">
+<html lang={lang}>
   <head>
     <BaseHead
       title={title}

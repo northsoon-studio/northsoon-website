@@ -7,20 +7,20 @@ import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.ast
 import { useTranslations } from "@/i18n/translations";
 import { SITE_URL } from "@/data/site-config";
 
-const t = useTranslations('es');
+const t = useTranslations('en');
 ---
 
 <BaseLayout
-  title="Sitio del estudio · Northsoon"
-  description="El sitio real de Northsoon, construido con Astro, Tailwind CSS y Vercel. Un ejemplo de nuestro stack y proceso."
-  canonical={`${SITE_URL}/work/studio-site`}
-  lang="es"
+  title="Studio site · Northsoon"
+  description="The Northsoon studio site, built with Astro, Tailwind CSS, and Vercel. A live example of our stack and process."
+  canonical={`${SITE_URL}/en/work/studio-site`}
+  lang="en"
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
-      <BackLink href="/" label={t('back')} />
+      <BackLink href="/en/" label={t('back')} />
 
       <header class="mt-10 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
         <div>

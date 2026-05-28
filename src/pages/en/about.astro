@@ -7,21 +7,21 @@ import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
 import { useTranslations } from "@/i18n/translations";
 import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
 
-const t = useTranslations('es');
+const t = useTranslations('en');
 const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mailto.subject'))}`;
 ---
 
 <BaseLayout
   title={t('seo.about.title')}
   description={t('seo.about.desc')}
-  canonical={`${SITE_URL}/about`}
-  lang="es"
+  canonical={`${SITE_URL}/en/about`}
+  lang="en"
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
-      <BackLink href="/" label={t('back')} />
+      <BackLink href="/en/" label={t('back')} />
 
       <header class="mt-10">
         <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">

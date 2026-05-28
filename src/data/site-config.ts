@@ -11,9 +11,9 @@ export const SOCIAL = {
 };
 
 export const DEFAULT_SEO = {
-  title: "Northsoon · Independent web studio",
+  title: "Northsoon · Estudio independiente",
   description:
-    "Northsoon is a web studio built for the long run. We partner with founders, not just build sites.",
+    "Northsoon ayuda a empresas chilenas a automatizar procesos, crear dashboards operacionales y ordenar sus datos. Servicios de tecnología aplicada para PYMEs y empresas medianas.",
   ogImage: `${SITE_URL}/social_banner.png`,
 };
 
@@ -23,7 +23,7 @@ export const JSON_LD = {
   name: "Northsoon",
   url: SITE_URL,
   description: DEFAULT_SEO.description,
-  areaServed: "Worldwide",
+  areaServed: "CL",
 };
 
 export const ADDITIONAL_LINK_TAGS = [

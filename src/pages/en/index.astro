@@ -7,20 +7,20 @@ import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.ast
 import { useTranslations, projects } from "@/i18n/translations";
 import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
 
-const t = useTranslations('es');
-const PROJECTS = projects['es'];
+const t = useTranslations('en');
+const PROJECTS = projects['en'];
 
 const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
 const isHttpExternal = (href: string) => /^https?:/.test(href);
 
-const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mailto.subject'))}&body=Hola%2C%20me%20gustar%C3%ADa%20hablar%20de%20un%20proyecto.`;
+const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mailto.subject'))}&body=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project.`;
 ---
 
 <BaseLayout
   title={t('seo.home.title')}
   description={t('seo.home.desc')}
-  canonical={SITE_URL}
-  lang="es"
+  canonical={`${SITE_URL}/en/`}
+  lang="en"
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
