@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter.astro";
 import BackLink from "@/components/BackLink.astro";
 import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
 import { useTranslations } from "@/i18n/translations";
-import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
+import { CONTACT_EMAIL, FOUNDER, SITE_URL } from "@/data/site-config";
 
 const t = useTranslations('en');
 const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mailto.subject'))}`;
@@ -14,8 +14,13 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mail
 <BaseLayout
   title={t('seo.about.title')}
   description={t('seo.about.desc')}
-  canonical={`${SITE_URL}/en/about`}
+  canonical={`${SITE_URL}/en/about/`}
   lang="en"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/about/` },
+    { hreflang: "en", href: `${SITE_URL}/en/about/` },
+    { hreflang: "x-default", href: `${SITE_URL}/about/` },
+  ]}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
@@ -36,7 +41,18 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mail
         <p>{t('about.p1')}</p>
         <p>{t('about.p2')}</p>
         <p>{t('about.p3')}</p>
-        <p class="text-brand-foreground">{t('about.p4')}</p>
+        <p class="text-brand-foreground">
+          {t('about.p4.before')}{" "}
+          <a
+            href={FOUNDER.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline decoration-brand-border underline-offset-4 transition hover:text-brand-primary hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+          >
+            {FOUNDER.name}
+          </a>{" "}
+          {t('about.p4.after')}
+        </p>
       </section>
 
       <section class="mt-16">

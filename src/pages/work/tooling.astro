@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import BackLink from "@/components/BackLink.astro";
+import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
 import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
 import { useTranslations } from "@/i18n/translations";
 import { PACKAGES } from "@/data/packages";
@@ -12,10 +13,15 @@ const t = useTranslations('es');
 ---
 
 <BaseLayout
-  title="Herramientas open-source · Northsoon"
-  description="Helpers de Astro que construimos y publicamos públicamente: SEO y conjuntos de iconos Phosphor. Licencia MIT, usados en producción."
-  canonical={`${SITE_URL}/work/tooling`}
+  title="Open Source · Northsoon"
+  description="Paquetes y helpers para Astro que usamos para construir sitios rápidos, mantenibles y con buen SEO."
+  canonical={`${SITE_URL}/work/tooling/`}
   lang="es"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/work/tooling/` },
+    { hreflang: "en", href: `${SITE_URL}/en/work/tooling/` },
+    { hreflang: "x-default", href: `${SITE_URL}/work/tooling/` },
+  ]}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
@@ -77,6 +83,15 @@ const t = useTranslations('es');
                   <span>github</span>
                   <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
                 </a>
+                {pkg.name === "@northsoon/astro-seo" && (
+                  <a
+                    href="/open-source/astro-seo/"
+                    class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+                  >
+                    <span>detalle</span>
+                    <ArrowRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+                  </a>
+                )}
               </div>
             </li>
           ))}

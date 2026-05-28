@@ -11,10 +11,15 @@ const t = useTranslations('es');
 ---
 
 <BaseLayout
-  title="Sitio del estudio · Northsoon"
-  description="El sitio real de Northsoon, construido con Astro, Tailwind CSS y Vercel. Un ejemplo de nuestro stack y proceso."
-  canonical={`${SITE_URL}/work/studio-site`}
+  title="Northsoon.com · Ejemplo de sitio Astro"
+  description="El propio sitio de Northsoon: rápido, simple y construido con Astro como ejemplo de una presencia profesional liviana."
+  canonical={`${SITE_URL}/work/studio-site/`}
   lang="es"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/work/studio-site/` },
+    { hreflang: "en", href: `${SITE_URL}/en/work/studio-site/` },
+    { hreflang: "x-default", href: `${SITE_URL}/work/studio-site/` },
+  ]}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />

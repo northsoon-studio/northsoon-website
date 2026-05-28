@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import BackLink from "@/components/BackLink.astro";
+import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
 import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
 import { useTranslations } from "@/i18n/translations";
 import { PACKAGES } from "@/data/packages";
@@ -12,10 +13,15 @@ const t = useTranslations('en');
 ---
 
 <BaseLayout
-  title="Open-source tooling · Northsoon"
-  description="Astro helpers we maintain and ship publicly: SEO meta and JSON-LD, and Phosphor icons as typed components. Both MIT-licensed and used on this site."
-  canonical={`${SITE_URL}/en/work/tooling`}
+  title="Open Source · Northsoon"
+  description="Astro packages and helpers we use to build fast, maintainable websites with solid SEO."
+  canonical={`${SITE_URL}/en/work/tooling/`}
   lang="en"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/work/tooling/` },
+    { hreflang: "en", href: `${SITE_URL}/en/work/tooling/` },
+    { hreflang: "x-default", href: `${SITE_URL}/work/tooling/` },
+  ]}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
@@ -77,6 +83,15 @@ const t = useTranslations('en');
                   <span>github</span>
                   <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
                 </a>
+                {pkg.name === "@northsoon/astro-seo" && (
+                  <a
+                    href="/en/open-source/astro-seo/"
+                    class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+                  >
+                    <span>details</span>
+                    <ArrowRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+                  </a>
+                )}
               </div>
             </li>
           ))}

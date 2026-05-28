@@ -1,19 +1,36 @@
 ---
-import { FOUNDER } from "@/data/site-config";
+import GithubLogo from "@northsoon/phosphor-icons-astro/icons/GithubLogo.astro";
+import LinkedinLogo from "@northsoon/phosphor-icons-astro/icons/LinkedinLogo.astro";
+import { SOCIAL } from "@/data/site-config";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="mx-auto w-full max-w-xl px-6 py-8">
-  <p class="text-center font-mono text-[11px] text-brand-muted-foreground">
-    © {year} Northsoon ·{" "}
-    <a
-      href={FOUNDER.linkedin}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-brand-foreground underline decoration-brand-border underline-offset-4 transition hover:text-brand-primary hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
-    >
-      {FOUNDER.name}
-    </a>
-  </p>
+  <div class="flex items-center justify-between gap-4">
+    <p class="font-mono text-[11px] text-brand-muted-foreground">
+      © {year} Northsoon
+    </p>
+
+    <nav aria-label="Northsoon links" class="flex shrink-0 items-center gap-1">
+      <a
+        href={SOCIAL.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Northsoon on GitHub"
+        class="inline-flex size-8 items-center justify-center rounded-md text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+      >
+        <GithubLogo size={15} weight="bold" aria-hidden="true" />
+      </a>
+      <a
+        href={SOCIAL.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Northsoon on LinkedIn"
+        class="inline-flex size-8 items-center justify-center rounded-md text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+      >
+        <LinkedinLogo size={15} weight="bold" aria-hidden="true" />
+      </a>
+    </nav>
+  </div>
 </footer>

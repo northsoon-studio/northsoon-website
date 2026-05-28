@@ -10,10 +10,15 @@ const t = useTranslations('en');
 ---
 
 <BaseLayout
-  title="Lab · Northsoon"
-  description="Internal R&D at Northsoon. Small experiments in agent tooling and automation for independent operators and small teams."
-  canonical={`${SITE_URL}/en/work/lab`}
+  title="AI Internal Tool · Northsoon"
+  description="An internal lab with agents, scripts, and simple workflows to reduce repetitive work."
+  canonical={`${SITE_URL}/en/work/lab/`}
   lang="en"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/work/lab/` },
+    { hreflang: "en", href: `${SITE_URL}/en/work/lab/` },
+    { hreflang: "x-default", href: `${SITE_URL}/work/lab/` },
+  ]}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />

@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { AstroHead } from "@northsoon/astro-seo";
+import type { JsonLdObject } from "@northsoon/astro-seo";
 import {
   SITE_URL,
   DEFAULT_SEO,
@@ -10,6 +11,11 @@ import {
   ADDITIONAL_META_TAGS,
 } from "@/data/site-config";
 
+type AlternateLink = {
+  hreflang: string;
+  href: string;
+};
+
 interface Props {
   title?: string;
   description?: string;
@@ -17,16 +23,34 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  alternates?: AlternateLink[];
+  noindex?: boolean;
+  nofollow?: boolean;
+  jsonLd?: JsonLdObject | JsonLdObject[];
 }
 
 const {
   title = DEFAULT_SEO.title,
   description = DEFAULT_SEO.description,
-  canonical = SITE_URL,
+  canonical = `${SITE_URL}/`,
   ogTitle = title,
   ogDescription = description,
   ogImage = DEFAULT_SEO.ogImage,
+  alternates = [],
+  noindex = false,
+  nofollow = false,
+  jsonLd = JSON_LD,
 } = Astro.props;
+
+const twitter = SOCIAL.twitterHandle
+  ? {
+      handle: SOCIAL.twitterHandle,
+      site: SOCIAL.twitterHandle,
+      cardType: "summary_large_image" as const,
+    }
+  : {
+      cardType: "summary_large_image" as const,
+    };
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,6 +59,8 @@ const {
   title={title}
   description={description}
   canonical={canonical}
+  noindex={noindex}
+  nofollow={nofollow}
   openGraph={{
     url: canonical,
     type: "website",
@@ -43,14 +69,11 @@ const {
     site_name: "Northsoon",
     images: [{ url: ogImage, width: 1200, height: 630 }],
   }}
-  twitter={{
-    handle: SOCIAL.twitterHandle,
-    site: SOCIAL.twitterHandle,
-    cardType: "summary_large_image",
-  }}
+  twitter={twitter}
+  languageAlternates={alternates}
   additionalLinkTags={ADDITIONAL_LINK_TAGS}
   additionalMetaTags={ADDITIONAL_META_TAGS}
-  jsonLd={JSON_LD}
+  jsonLd={jsonLd}
 />
 
 <script is:inline>

@@ -7,41 +7,105 @@ import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.ast
 import { useTranslations, projects } from "@/i18n/translations";
 import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
 
-const t = useTranslations('es');
-const PROJECTS = projects['es'];
+const t = useTranslations("es");
+const PROJECTS = projects["es"];
 
 const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
 const isHttpExternal = (href: string) => /^https?:/.test(href);
 
-const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mailto.subject'))}&body=Hola%2C%20me%20gustar%C3%ADa%20hablar%20de%20un%20proyecto.`;
+const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mailto.subject"))}&body=Hola%2C%20me%20gustar%C3%ADa%20hablar%20de%20un%20proyecto.`;
 ---
 
 <BaseLayout
-  title={t('seo.home.title')}
-  description={t('seo.home.desc')}
-  canonical={SITE_URL}
+  title={t("seo.home.title")}
+  description={t("seo.home.desc")}
+  canonical={`${SITE_URL}/`}
   lang="es"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/` },
+    { hreflang: "en", href: `${SITE_URL}/en/` },
+    { hreflang: "x-default", href: `${SITE_URL}/` },
+  ]}
 >
   <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
-      <section class="mb-12 sm:mb-16">
+      <section class="mb-16 sm:mb-20">
         <h1 class="font-display text-6xl font-semibold tracking-tight sm:text-7xl">
           Northsoon
         </h1>
         <p class="mt-10 max-w-md text-[15px] leading-relaxed text-brand-muted-foreground">
-          {t('hero.description')}
+          {t("hero.description")}
         </p>
         <p class="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
-          {t('hero.subtitle')}
+          {t("hero.subtitle")}
         </p>
       </section>
 
       <section class="mb-20">
         <header class="mb-8 flex items-center gap-4">
           <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
-            {t('section.work')}
+            {t("section.help")}
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <ul class="space-y-8">
+          {[
+            { n: "01", title: t("help.1.title"), desc: t("help.1.desc") },
+            { n: "02", title: t("help.2.title"), desc: t("help.2.desc") },
+            { n: "03", title: t("help.3.title"), desc: t("help.3.desc") },
+            { n: "04", title: t("help.4.title"), desc: t("help.4.desc") },
+          ].map((item) => (
+            <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+              <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">{item.n}</span>
+              <div class="min-w-0">
+                <p class="font-medium text-brand-foreground">{item.title}</p>
+                <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{item.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mb-20">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            {t("section.how")}
+          </span>
+          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+        </header>
+
+        <ul class="space-y-8">
+          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">01</span>
+            <div class="min-w-0">
+              <p class="font-medium text-brand-foreground">{t("how.1.title")}</p>
+              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t("how.1.desc")}</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">02</span>
+            <div class="min-w-0">
+              <p class="font-medium text-brand-foreground">{t("how.2.title")}</p>
+              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t("how.2.desc")}</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
+            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">03</span>
+            <div class="min-w-0">
+              <p class="font-medium text-brand-foreground">{t("how.3.title")}</p>
+              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t("how.3.desc")}</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-20">
+        <header class="mb-8 flex items-center gap-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+            {t("section.work")}
           </span>
           <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
         </header>
@@ -81,68 +145,18 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mail
         </ul>
       </section>
 
-      <section class="mb-20">
-        <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
-            {t('section.how')}
-          </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
-        </header>
-
-        <ul class="space-y-8">
-          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">01</span>
-            <div class="min-w-0">
-              <p class="font-medium text-brand-foreground">{t('how.1.title')}</p>
-              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t('how.1.desc')}</p>
-            </div>
-          </li>
-          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">02</span>
-            <div class="min-w-0">
-              <p class="font-medium text-brand-foreground">{t('how.2.title')}</p>
-              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t('how.2.desc')}</p>
-            </div>
-          </li>
-          <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">03</span>
-            <div class="min-w-0">
-              <p class="font-medium text-brand-foreground">{t('how.3.title')}</p>
-              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t('how.3.desc')}</p>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="mb-20">
-        <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
-            {t('section.help')}
-          </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
-        </header>
-
-        <ul class="space-y-3">
-          {[t('help.1'), t('help.2'), t('help.3'), t('help.4')].map((item) => (
-            <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-              <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">·</span>
-              <p class="text-sm leading-relaxed text-brand-muted-foreground">{item}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       <section>
         <header class="mb-6 flex items-center gap-4">
           <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
-            {t('section.cta')}
+            {t("section.cta")}
           </span>
           <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
         </header>
 
-        <p class="mb-2 font-medium text-brand-foreground">{t('cta.title')}</p>
+        <p class="mb-2 font-medium text-brand-foreground">{t("cta.title")}</p>
         <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-brand-muted-foreground">
-          {t('cta.desc')}
+          {t("cta.desc")}
         </p>
 
         <a
