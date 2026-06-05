@@ -23,14 +23,14 @@ const t = useTranslations('es');
     { hreflang: "x-default", href: `${SITE_URL}/work/tooling/` },
   ]}
 >
-  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
       <BackLink href="/" label={t('back')} />
 
       <header class="mt-10">
-        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
           {t('work.tooling.breadcrumb')}
         </p>
         <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
@@ -38,30 +38,30 @@ const t = useTranslations('es');
         </h1>
       </header>
 
-      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-brand-muted-foreground">
+      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-ns-muted-foreground">
         <p>{t('work.tooling.intro')}</p>
       </section>
 
       <section class="mt-12">
         <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t('work.tooling.packages')}
           </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>
         </header>
 
         <ul class="space-y-10">
           {PACKAGES.map((pkg) => (
             <li>
               <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h2 class="font-mono text-sm font-medium text-brand-foreground break-all">
+                <h2 class="font-mono text-sm font-medium text-ns-foreground break-all">
                   {pkg.name}
                 </h2>
-                <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground">
+                <span class="font-mono text-[11px] uppercase tracking-wider text-ns-muted-foreground">
                   {pkg.version}
                 </span>
               </div>
-              <p class="mt-2 text-sm leading-relaxed text-brand-muted-foreground">
+              <p class="mt-2 text-sm leading-relaxed text-ns-muted-foreground">
                 {pkg.desc_es}
               </p>
               <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -69,7 +69,7 @@ const t = useTranslations('es');
                   href={pkg.npm}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+                  class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ns-muted-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
                 >
                   <span>npm</span>
                   <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
@@ -78,7 +78,7 @@ const t = useTranslations('es');
                   href={pkg.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+                  class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ns-muted-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
                 >
                   <span>github</span>
                   <ArrowUpRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
@@ -86,7 +86,7 @@ const t = useTranslations('es');
                 {pkg.name === "@northsoon/astro-seo" && (
                   <a
                     href="/open-source/astro-seo/"
-                    class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+                    class="group inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ns-muted-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
                   >
                     <span>detalle</span>
                     <ArrowRight size={11} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
@@ -102,3 +102,4 @@ const t = useTranslations('es');
     <SiteFooter />
   </div>
 </BaseLayout>
+

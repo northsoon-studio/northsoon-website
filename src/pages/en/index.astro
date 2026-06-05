@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
@@ -27,7 +27,7 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
     { hreflang: "x-default", href: `${SITE_URL}/` },
   ]}
 >
-  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
@@ -35,20 +35,20 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
         <h1 class="font-display text-6xl font-semibold tracking-tight sm:text-7xl">
           Northsoon
         </h1>
-        <p class="mt-10 max-w-md text-[15px] leading-relaxed text-brand-muted-foreground">
+        <p class="mt-5 max-w-md text-[15px] leading-relaxed text-ns-muted-foreground">
           {t("hero.description")}
         </p>
-        <p class="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+        <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
           {t("hero.subtitle")}
         </p>
       </section>
 
       <section class="mb-20">
         <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t("section.help")}
           </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>
         </header>
 
         <ul class="space-y-8">
@@ -59,10 +59,10 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
             { n: "04", title: t("help.4.title"), desc: t("help.4.desc") },
           ].map((item) => (
             <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-              <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">{item.n}</span>
+              <span class="pt-0.5 font-mono text-xs text-ns-muted-foreground" aria-hidden="true">{item.n}</span>
               <div class="min-w-0">
-                <p class="font-medium text-brand-foreground">{item.title}</p>
-                <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{item.desc}</p>
+                <p class="font-medium text-ns-foreground">{item.title}</p>
+                <p class="mt-1 text-sm leading-relaxed text-ns-muted-foreground">{item.desc}</p>
               </div>
             </li>
           ))}
@@ -71,32 +71,32 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
 
       <section class="mb-20">
         <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t("section.how")}
           </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>
         </header>
 
         <ul class="space-y-8">
           <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">01</span>
+            <span class="pt-0.5 font-mono text-xs text-ns-muted-foreground" aria-hidden="true">01</span>
             <div class="min-w-0">
-              <p class="font-medium text-brand-foreground">{t("how.1.title")}</p>
-              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t("how.1.desc")}</p>
+              <p class="font-medium text-ns-foreground">{t("how.1.title")}</p>
+              <p class="mt-1 text-sm leading-relaxed text-ns-muted-foreground">{t("how.1.desc")}</p>
             </div>
           </li>
           <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">02</span>
+            <span class="pt-0.5 font-mono text-xs text-ns-muted-foreground" aria-hidden="true">02</span>
             <div class="min-w-0">
-              <p class="font-medium text-brand-foreground">{t("how.2.title")}</p>
-              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t("how.2.desc")}</p>
+              <p class="font-medium text-ns-foreground">{t("how.2.title")}</p>
+              <p class="mt-1 text-sm leading-relaxed text-ns-muted-foreground">{t("how.2.desc")}</p>
             </div>
           </li>
           <li class="grid grid-cols-[2rem_1fr] items-start gap-x-4 sm:gap-x-6">
-            <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">03</span>
+            <span class="pt-0.5 font-mono text-xs text-ns-muted-foreground" aria-hidden="true">03</span>
             <div class="min-w-0">
-              <p class="font-medium text-brand-foreground">{t("how.3.title")}</p>
-              <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">{t("how.3.desc")}</p>
+              <p class="font-medium text-ns-foreground">{t("how.3.title")}</p>
+              <p class="mt-1 text-sm leading-relaxed text-ns-muted-foreground">{t("how.3.desc")}</p>
             </div>
           </li>
         </ul>
@@ -104,10 +104,10 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
 
       <section class="mb-20">
         <header class="mb-8 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t("section.work")}
           </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>
         </header>
 
         <ul class="space-y-8">
@@ -116,14 +116,14 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
             const newTab = isHttpExternal(p.href);
             return (
               <li class="grid grid-cols-[2rem_1fr_auto] items-start gap-x-4 sm:gap-x-6">
-                <span class="pt-0.5 font-mono text-xs text-brand-muted-foreground" aria-hidden="true">
+                <span class="pt-0.5 font-mono text-xs text-ns-muted-foreground" aria-hidden="true">
                   {p.n}
                 </span>
                 <div class="min-w-0">
                   <a
                     href={p.href}
                     {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    class="group inline-flex items-center gap-1.5 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+                    class="group inline-flex items-center gap-1.5 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
                   >
                     <span class="font-medium">{p.name}</span>
                     {external ? (
@@ -132,11 +132,11 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
                       <ArrowRight size={12} weight="bold" class="opacity-50 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
                     )}
                   </a>
-                  <p class="mt-1 text-sm leading-relaxed text-brand-muted-foreground">
+                  <p class="mt-1 text-sm leading-relaxed text-ns-muted-foreground">
                     {p.desc}
                   </p>
                 </div>
-                <span class="pt-1 font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground">
+                <span class="pt-1 font-mono text-[11px] uppercase tracking-wider text-ns-muted-foreground">
                   {p.status}
                 </span>
               </li>
@@ -148,20 +148,20 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
 
       <section>
         <header class="mb-6 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t("section.cta")}
           </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>
         </header>
 
-        <p class="mb-2 font-medium text-brand-foreground">{t("cta.title")}</p>
-        <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-brand-muted-foreground">
+        <p class="mb-2 font-medium text-ns-foreground">{t("cta.title")}</p>
+        <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-ns-muted-foreground">
           {t("cta.desc")}
         </p>
 
         <a
           href={mailtoHref}
-          class="group inline-flex items-center gap-2 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+          class="group inline-flex items-center gap-2 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
         >
           <span class="font-medium">{CONTACT_EMAIL}</span>
           <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />

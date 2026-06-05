@@ -21,7 +21,7 @@ const t = useTranslations('en');
     { hreflang: "x-default", href: `${SITE_URL}/work/studio-site/` },
   ]}
 >
-  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
@@ -29,19 +29,19 @@ const t = useTranslations('en');
 
       <header class="mt-10 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
         <div>
-          <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t('work.studio.breadcrumb')}
           </p>
           <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
             {t('work.studio.h1')}
           </h1>
         </div>
-        <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted-foreground">
+        <span class="font-mono text-[11px] uppercase tracking-wider text-ns-muted-foreground">
           {t('work.studio.status')}
         </span>
       </header>
 
-      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-brand-muted-foreground">
+      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-ns-muted-foreground">
         <p>{t('work.studio.p1')}</p>
         <p>{t('work.studio.p2')}</p>
         <p>{t('work.studio.p3')}</p>
@@ -50,7 +50,7 @@ const t = useTranslations('en');
             href="https://old.northsoon.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1.5 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+            class="group inline-flex items-center gap-1.5 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
           >
             <span class="font-medium">old.northsoon.com</span>
             <ArrowUpRight size={12} weight="bold" class="-translate-y-0.5 opacity-50 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
@@ -62,3 +62,4 @@ const t = useTranslations('en');
     <SiteFooter />
   </div>
 </BaseLayout>
+

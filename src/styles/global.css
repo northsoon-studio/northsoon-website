@@ -1,6 +1,7 @@
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/geist-mono";
+@import "../assets/brand/northsoon-palette.css";
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -12,51 +13,83 @@
     "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-:root {
-  --brand-background:         oklch(0.966 0.013 282);
-  --brand-foreground:         oklch(0.141 0.004 286);
-  --brand-muted:              oklch(0.952 0.011 270);
-  --brand-muted-foreground:   oklch(0.501 0.040 269);
-  --brand-border:             oklch(0.828 0.075 280);
-  --brand-primary:            oklch(0.465 0.249 267);
-  --brand-primary-foreground: oklch(0.985 0.000 0);
-  --brand-accent:             oklch(0.572 0.235 271);
-  --brand-radius:             0.625rem;
-}
-
-.dark {
-  --brand-background:         oklch(0.141 0.004 286);
-  --brand-foreground:         oklch(0.985 0.000 0);
-  --brand-muted:              oklch(0.274 0.005 286);
-  --brand-muted-foreground:   oklch(0.706 0.014 286);
-  --brand-border:             oklch(1 0 0 / 0.10);
-  --brand-primary:            oklch(0.572 0.235 271);
-  --brand-primary-foreground: oklch(0.985 0.000 0);
-}
-
+/* Expone --ns-* a Tailwind como utilidades de color y espaciado */
 @theme inline {
-  --color-brand-background:        var(--brand-background);
-  --color-brand-foreground:        var(--brand-foreground);
-  --color-brand-muted:             var(--brand-muted);
-  --color-brand-muted-foreground:  var(--brand-muted-foreground);
-  --color-brand-border:            var(--brand-border);
-  --color-brand-primary:           var(--brand-primary);
-  --color-brand-primary-foreground: var(--brand-primary-foreground);
-  --radius-sm: calc(var(--brand-radius) - 4px);
-  --radius-md: calc(var(--brand-radius) - 2px);
-  --radius-lg: var(--brand-radius);
+  /* ── NS UI API (bg-ns-background, text-ns-primary, …) */
+  --color-ns-background: var(--ns-background);
+  --color-ns-foreground: var(--ns-foreground);
+  --color-ns-muted: var(--ns-muted);
+  --color-ns-muted-foreground: var(--ns-muted-foreground);
+  --color-ns-border: var(--ns-border);
+  --color-ns-primary: var(--ns-primary);
+  --color-ns-primary-foreground: var(--ns-primary-foreground);
+  --color-ns-accent: var(--ns-accent);
+
+  /* ── Nuevas utilidades Northsoon (bg-signal, text-flare, bg-north-900, …) */
+  --color-signal: var(--ns-signal-600);
+  --color-signal-50: var(--ns-signal-50);
+  --color-signal-100: var(--ns-signal-100);
+  --color-signal-200: var(--ns-signal-200);
+  --color-signal-300: var(--ns-signal-300);
+  --color-signal-400: var(--ns-signal-400);
+  --color-signal-500: var(--ns-signal-500);
+  --color-signal-600: var(--ns-signal-600);
+  --color-signal-700: var(--ns-signal-700);
+  --color-signal-800: var(--ns-signal-800);
+  --color-signal-900: var(--ns-signal-900);
+
+  --color-flare: var(--ns-flare-500);
+  --color-flare-50: var(--ns-flare-50);
+  --color-flare-100: var(--ns-flare-100);
+  --color-flare-200: var(--ns-flare-200);
+  --color-flare-300: var(--ns-flare-300);
+  --color-flare-400: var(--ns-flare-400);
+  --color-flare-500: var(--ns-flare-500);
+  --color-flare-600: var(--ns-flare-600);
+  --color-flare-700: var(--ns-flare-700);
+  --color-flare-800: var(--ns-flare-800);
+  --color-flare-900: var(--ns-flare-900);
+
+  --color-north: var(--ns-north-900);
+  --color-north-50: var(--ns-north-50);
+  --color-north-100: var(--ns-north-100);
+  --color-north-200: var(--ns-north-200);
+  --color-north-300: var(--ns-north-300);
+  --color-north-400: var(--ns-north-400);
+  --color-north-500: var(--ns-north-500);
+  --color-north-600: var(--ns-north-600);
+  --color-north-700: var(--ns-north-700);
+  --color-north-800: var(--ns-north-800);
+  --color-north-900: var(--ns-north-900);
+
+  --color-solar: var(--ns-solar-900);
+  --color-solar-50: var(--ns-solar-50);
+  --color-solar-100: var(--ns-solar-100);
+  --color-solar-200: var(--ns-solar-200);
+  --color-solar-300: var(--ns-solar-300);
+  --color-solar-400: var(--ns-solar-400);
+  --color-solar-500: var(--ns-solar-500);
+  --color-solar-600: var(--ns-solar-600);
+  --color-solar-700: var(--ns-solar-700);
+  --color-solar-800: var(--ns-solar-800);
+  --color-solar-900: var(--ns-solar-900);
+
+  /* ── Border radius */
+  --radius-sm: calc(var(--ns-radius) - 4px);
+  --radius-md: calc(var(--ns-radius) - 2px);
+  --radius-lg: var(--ns-radius);
 }
 
 @layer base {
   html {
-    background-color: var(--brand-background);
-    color: var(--brand-foreground);
+    background-color: var(--ns-background);
+    color: var(--ns-foreground);
     scrollbar-width: thin;
-    scrollbar-color: var(--brand-border) transparent;
+    scrollbar-color: var(--ns-border) transparent;
   }
   body {
-    background-color: var(--brand-background);
-    color: var(--brand-foreground);
+    background-color: var(--ns-background);
+    color: var(--ns-foreground);
     font-family: var(--font-sans);
   }
 
@@ -68,12 +101,12 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: var(--brand-border);
+    background-color: var(--ns-border);
     border-radius: 9999px;
-    border: 2px solid var(--brand-background);
+    border: 2px solid var(--ns-background);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--brand-muted-foreground);
+    background-color: var(--ns-muted-foreground);
   }
   ::-webkit-scrollbar-corner {
     background: transparent;

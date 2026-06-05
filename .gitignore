@@ -11,4 +11,3 @@ _internal/
 # Local-only design assets and build tooling (not for production)
 tools/
 src/pages/logos.astro
-src/assets/brand/

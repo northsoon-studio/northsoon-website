@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
@@ -22,14 +22,14 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mail
     { hreflang: "x-default", href: `${SITE_URL}/about/` },
   ]}
 >
-  <div class="flex min-h-screen flex-col bg-brand-background text-brand-foreground">
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
     <SiteNav />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
       <BackLink href="/" label={t('back')} />
 
       <header class="mt-10">
-        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
           {t('about.breadcrumb')}
         </p>
         <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
@@ -37,17 +37,17 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mail
         </h1>
       </header>
 
-      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-brand-muted-foreground">
+      <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-ns-muted-foreground">
         <p>{t('about.p1')}</p>
         <p>{t('about.p2')}</p>
         <p>{t('about.p3')}</p>
-        <p class="text-brand-foreground">
+        <p class="text-ns-foreground">
           {t('about.p4.before')}{" "}
           <a
             href={FOUNDER.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            class="underline decoration-brand-border underline-offset-4 transition hover:text-brand-primary hover:decoration-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+            class="underline decoration-ns-border underline-offset-4 transition hover:text-ns-primary hover:decoration-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
           >
             {FOUNDER.name}
           </a>{" "}
@@ -57,19 +57,19 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t('mail
 
       <section class="mt-16">
         <header class="mb-6 flex items-center gap-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t('about.cta.label')}
           </span>
-          <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>
         </header>
 
-        <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-brand-muted-foreground">
+        <p class="mb-6 max-w-sm text-[15px] leading-relaxed text-ns-muted-foreground">
           {t('about.cta.desc')}
         </p>
 
         <a
           href={mailtoHref}
-          class="group inline-flex items-center gap-2 text-brand-foreground transition hover:text-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+          class="group inline-flex items-center gap-2 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
         >
           <span class="font-medium">{CONTACT_EMAIL}</span>
           <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />

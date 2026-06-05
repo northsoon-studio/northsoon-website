@@ -8,8 +8,8 @@ export const ui = {
 
     // Hero
     "hero.description":
-      "Ayudamos a negocios pequeños a tener una web clara, captar más consultas y automatizar tareas repetitivas sin sistemas innecesarios.",
-    "hero.subtitle": "Empezamos pequeño. Entregamos algo usable.",
+      "Hacemos la web. Tú haces el negocio.",
+    "hero.subtitle": "Rápido. Claro. Tuyo.",
 
     // Section labels
     "section.work": "Proyectos",
@@ -110,8 +110,8 @@ export const ui = {
 
     // Hero
     "hero.description":
-      "We help small businesses get a clear website, generate more inquiries, and automate repetitive tasks without unnecessary systems.",
-    "hero.subtitle": "Start small. Ship something useful.",
+      "We build the website. You run the business.",
+    "hero.subtitle": "Fast. Clear. Yours.",
 
     // Section labels
     "section.work": "Projects",

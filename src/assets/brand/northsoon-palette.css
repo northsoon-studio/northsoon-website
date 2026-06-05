@@ -1,0 +1,257 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   NORTHSOON PALETTE — source of truth para identidad visual
+   v3.0 · Sistema 100% propio en OKLCH
+
+   LAYER 1 · Palette     8 familias, 10–11 pasos cada una
+   LAYER 2 · Semantic    Tokens de significado (--ns-*)
+   LAYER 3 · NS UI API   --ns-background, --ns-primary, etc. → Tailwind
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Tipografía:
+     Display : Geist Variable
+     Body/UI : Inter Variable
+     Mono    : Geist Mono Variable
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LAYER 1 · PALETTE — Escalas crudas
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root {
+
+  /* ── INK · Neutral puro ──────────────────────────────────────────────── */
+  --ns-ink-50:  oklch(0.965 0.003 0);
+  --ns-ink-100: oklch(0.916 0.003 0);
+  --ns-ink-200: oklch(0.797 0.003 0);
+  --ns-ink-300: oklch(0.676 0.003 0);
+  --ns-ink-400: oklch(0.561 0.003 0);
+  --ns-ink-500: oklch(0.440 0.003 0);
+  --ns-ink-600: oklch(0.319 0.002 0);
+  --ns-ink-700: oklch(0.228 0.002 0);
+  --ns-ink-800: oklch(0.165 0.001 0);
+  --ns-ink-900: oklch(0.137 0 0);
+
+  /* ── MIST · Neutral blue-tinted ──────────────────────────────────────── */
+  --ns-mist-50:  oklch(0.960 0.008 255);
+  --ns-mist-100: oklch(0.913 0.011 255);
+  --ns-mist-200: oklch(0.833 0.016 255);
+  --ns-mist-300: oklch(0.753 0.019 255);
+  --ns-mist-400: oklch(0.670 0.020 255);
+  --ns-mist-500: oklch(0.581 0.022 255);
+  --ns-mist-600: oklch(0.490 0.022 255);
+  --ns-mist-700: oklch(0.393 0.018 255);
+  --ns-mist-800: oklch(0.300 0.013 255);
+  --ns-mist-900: oklch(0.212 0.012 255);
+
+  /* ── NORTH · Azul-púrpura profundo ──────────────────────────────────── */
+  --ns-north-50:  oklch(0.965 0.010 285);  /* background light = #f2f3fd  */
+  --ns-north-100: oklch(0.934 0.015 283);
+  --ns-north-200: oklch(0.858 0.018 281);
+  --ns-north-300: oklch(0.693 0.022 280);  /* border lavender              */
+  --ns-north-400: oklch(0.543 0.025 278);
+  --ns-north-500: oklch(0.420 0.032 276);
+  --ns-north-600: oklch(0.320 0.040 275);
+  --ns-north-700: oklch(0.248 0.045 278);
+  --ns-north-800: oklch(0.196 0.048 278);
+  --ns-north-900: oklch(0.168 0.042 281);  /* dark mode background         */
+
+  /* ── SIGNAL · Azul Northsoon — escala OKLCH propia ──────────────────── */
+  --ns-signal-50:  oklch(0.972 0.022 267);
+  --ns-signal-100: oklch(0.935 0.050 267);
+  --ns-signal-200: oklch(0.875 0.088 267);
+  --ns-signal-300: oklch(0.795 0.128 267);
+  --ns-signal-400: oklch(0.700 0.172 267);
+  --ns-signal-500: oklch(0.572 0.235 271);  /* dark-mode primary ★         */
+  --ns-signal-600: oklch(0.465 0.249 267);  /* #2139E1 — primary ★         */
+  --ns-signal-700: oklch(0.390 0.218 267);
+  --ns-signal-800: oklch(0.322 0.168 268);  /* #122087 — hover ★           */
+  --ns-signal-900: oklch(0.258 0.128 268);
+  --ns-signal-950: oklch(0.208 0.090 268);
+
+  /* ── FLARE · Naranja Northsoon — escala OKLCH propia ────────────────── */
+  --ns-flare-50:  oklch(0.976 0.018 32);
+  --ns-flare-100: oklch(0.942 0.042 32);
+  --ns-flare-200: oklch(0.888 0.082 32);
+  --ns-flare-300: oklch(0.808 0.128 33);
+  --ns-flare-400: oklch(0.714 0.182 34);    /* #FF704F — accent ★          */
+  --ns-flare-500: oklch(0.664 0.190 32);    /* #F15B40 — secondary ★       */
+  --ns-flare-600: oklch(0.590 0.195 32);
+  --ns-flare-700: oklch(0.526 0.196 33);    /* #C22400 — hover ★           */
+  --ns-flare-800: oklch(0.440 0.178 30);
+  --ns-flare-900: oklch(0.350 0.142 28);
+  --ns-flare-950: oklch(0.265 0.108 26);
+
+  /* ── SPROUT · Verde éxito ────────────────────────────────────────────── */
+  --ns-sprout-50:  oklch(0.975 0.030 145);
+  --ns-sprout-100: oklch(0.940 0.065 145);
+  --ns-sprout-200: oklch(0.880 0.100 145);
+  --ns-sprout-300: oklch(0.800 0.130 148);
+  --ns-sprout-400: oklch(0.710 0.148 150);
+  --ns-sprout-500: oklch(0.618 0.145 150);
+  --ns-sprout-600: oklch(0.515 0.132 150);
+  --ns-sprout-700: oklch(0.415 0.108 148);
+  --ns-sprout-800: oklch(0.318 0.082 146);
+  --ns-sprout-900: oklch(0.238 0.058 144);
+
+  /* ── SOLAR · Ámbar advertencia ───────────────────────────────────────── */
+  --ns-solar-50:  oklch(0.980 0.025 82);
+  --ns-solar-100: oklch(0.950 0.060 80);
+  --ns-solar-200: oklch(0.900 0.105 78);
+  --ns-solar-300: oklch(0.838 0.145 75);
+  --ns-solar-400: oklch(0.780 0.170 72);
+  --ns-solar-500: oklch(0.710 0.172 70);
+  --ns-solar-600: oklch(0.620 0.158 66);
+  --ns-solar-700: oklch(0.518 0.138 62);
+  --ns-solar-800: oklch(0.415 0.108 58);
+  --ns-solar-900: oklch(0.322 0.082 54);
+
+  /* ── FAULT · Rojo error ──────────────────────────────────────────────── */
+  --ns-fault-50:  oklch(0.968 0.022 25);
+  --ns-fault-100: oklch(0.920 0.060 25);
+  --ns-fault-200: oklch(0.842 0.110 25);
+  --ns-fault-300: oklch(0.750 0.168 26);
+  --ns-fault-400: oklch(0.658 0.210 27);
+  --ns-fault-500: oklch(0.558 0.220 26);
+  --ns-fault-600: oklch(0.460 0.198 25);
+  --ns-fault-700: oklch(0.370 0.168 24);
+  --ns-fault-800: oklch(0.290 0.135 23);
+  --ns-fault-900: oklch(0.225 0.100 22);
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LAYER 2 · SEMANTIC TOKENS — Light Mode
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root {
+
+  /* Brand ─────────────────────────────────────────────────────────────────── */
+  --ns-brand-primary:          var(--ns-signal-600);
+  --ns-brand-primary-hover:    var(--ns-signal-800);
+  --ns-brand-primary-subtle:   var(--ns-signal-50);
+
+  --ns-brand-secondary:        var(--ns-flare-500);
+  --ns-brand-secondary-hover:  var(--ns-flare-700);
+  --ns-brand-secondary-subtle: var(--ns-flare-50);
+
+  --ns-brand-accent:           var(--ns-flare-400);
+
+  /* Surfaces ──────────────────────────────────────────────────────────────── */
+  --ns-surface-page:    var(--ns-north-50);
+  --ns-surface-raised:  oklch(1 0 0);
+  --ns-surface-overlay: var(--ns-north-100);
+  --ns-surface-sunken:  var(--ns-mist-50);
+
+  /* Text ──────────────────────────────────────────────────────────────────── */
+  --ns-text-primary:   var(--ns-ink-900);
+  --ns-text-secondary: var(--ns-north-500);
+  --ns-text-tertiary:  var(--ns-north-400);
+  --ns-text-disabled:  var(--ns-north-300);
+  --ns-text-inverse:   oklch(1 0 0);
+  --ns-text-brand:     var(--ns-signal-600);
+  --ns-text-accent:    var(--ns-flare-700);
+
+  /* Borders ───────────────────────────────────────────────────────────────── */
+  --ns-border-subtle:  var(--ns-north-100);
+  --ns-border-default: var(--ns-north-300);
+  --ns-border-strong:  var(--ns-north-400);
+  --ns-border-brand:   var(--ns-signal-600);
+
+  /* States ────────────────────────────────────────────────────────────────── */
+  --ns-success:        var(--ns-sprout-600);
+  --ns-success-subtle: var(--ns-sprout-50);
+  --ns-success-text:   var(--ns-sprout-700);
+
+  --ns-warning:        var(--ns-solar-600);
+  --ns-warning-subtle: var(--ns-solar-50);
+  --ns-warning-text:   var(--ns-solar-700);
+
+  --ns-error:          var(--ns-fault-600);
+  --ns-error-subtle:   var(--ns-fault-50);
+  --ns-error-text:     var(--ns-fault-700);
+
+  --ns-info:           var(--ns-signal-600);
+  --ns-info-subtle:    var(--ns-signal-50);
+  --ns-info-text:      var(--ns-signal-700);
+
+  /* ── NS API (Tailwind --color-ns-* en global.css) ──────────────────────
+     bg-ns-background, text-ns-foreground, text-ns-primary, etc.          */
+  --ns-background:          var(--ns-north-50);
+  --ns-foreground:          var(--ns-ink-900);
+  --ns-muted:               var(--ns-north-100);
+  --ns-muted-foreground:    var(--ns-north-500);
+  --ns-border:              var(--ns-north-300);
+  --ns-primary:             var(--ns-signal-600);
+  --ns-primary-foreground:  oklch(1 0 0);
+  --ns-accent:              var(--ns-signal-500);
+  --ns-radius:              0.625rem;
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LAYER 2 · SEMANTIC TOKENS — Dark Mode
+   Background: North-900 (azul-púrpura profundo — identidad propia en dark)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.dark {
+
+  /* Brand dark ─────────────────────────────────────────────────────────────── */
+  --ns-brand-primary:          var(--ns-signal-500);
+  --ns-brand-primary-hover:    var(--ns-signal-400);
+  --ns-brand-primary-subtle:   oklch(0.465 0.249 267 / 15%);
+
+  --ns-brand-secondary:        var(--ns-flare-400);
+  --ns-brand-secondary-hover:  var(--ns-flare-300);
+  --ns-brand-secondary-subtle: oklch(0.664 0.190 32 / 15%);
+
+  --ns-brand-accent:           var(--ns-flare-400);
+
+  /* Surfaces dark ──────────────────────────────────────────────────────────── */
+  --ns-surface-page:    var(--ns-north-900);
+  --ns-surface-raised:  var(--ns-north-800);
+  --ns-surface-overlay: var(--ns-north-700);
+  --ns-surface-sunken:  oklch(0.140 0.035 281);
+
+  /* Text dark ──────────────────────────────────────────────────────────────── */
+  --ns-text-primary:   var(--ns-ink-50);
+  --ns-text-secondary: var(--ns-mist-300);
+  --ns-text-tertiary:  var(--ns-mist-400);
+  --ns-text-disabled:  var(--ns-mist-600);
+  --ns-text-inverse:   var(--ns-ink-900);
+  --ns-text-brand:     var(--ns-signal-400);
+  --ns-text-accent:    var(--ns-flare-400);
+
+  /* Borders dark ───────────────────────────────────────────────────────────── */
+  --ns-border-subtle:  oklch(1 0 0 / 8%);
+  --ns-border-default: oklch(1 0 0 / 14%);
+  --ns-border-strong:  oklch(1 0 0 / 30%);
+  --ns-border-brand:   var(--ns-signal-500);
+
+  /* States dark ────────────────────────────────────────────────────────────── */
+  --ns-success:        var(--ns-sprout-400);
+  --ns-success-subtle: oklch(0.415 0.108 148 / 20%);
+  --ns-success-text:   var(--ns-sprout-300);
+
+  --ns-warning:        var(--ns-solar-400);
+  --ns-warning-subtle: oklch(0.518 0.138 62 / 20%);
+  --ns-warning-text:   var(--ns-solar-300);
+
+  --ns-error:          var(--ns-fault-400);
+  --ns-error-subtle:   oklch(0.460 0.198 25 / 20%);
+  --ns-error-text:     var(--ns-fault-300);
+
+  --ns-info:           var(--ns-signal-400);
+  --ns-info-subtle:    oklch(0.465 0.249 267 / 20%);
+  --ns-info-text:      var(--ns-signal-300);
+
+  /* NS API dark ────────────────────────────────────────────────────────────── */
+  --ns-background:         var(--ns-north-900);
+  --ns-foreground:         var(--ns-ink-50);
+  --ns-muted:              var(--ns-north-700);
+  --ns-muted-foreground:   var(--ns-mist-400);
+  --ns-border:             oklch(1 0 0 / 0.10);
+  --ns-primary:            var(--ns-signal-500);
+  --ns-primary-foreground: oklch(1 0 0);
+  --ns-accent:             var(--ns-signal-400);
+}

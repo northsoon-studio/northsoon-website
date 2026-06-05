@@ -26,14 +26,14 @@ const alternateHref = getRelativeLocaleUrl(alternateLang, canonicalPath);
   <div class="flex items-center gap-4 sm:gap-5">
     <a
       href={aboutHref}
-      class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground transition hover:text-brand-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+      class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground transition hover:text-ns-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
     >
       {t('nav.about')}
     </a>
 
     <a
       href={alternateHref}
-      class="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-muted-foreground transition hover:text-brand-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+      class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground transition hover:text-ns-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
       aria-label={locale === 'es' ? 'Switch to English' : 'Cambiar a Español'}
     >
       {t('nav.lang')}
@@ -44,10 +44,10 @@ const alternateHref = getRelativeLocaleUrl(alternateLang, canonicalPath);
       type="button"
       aria-label="Toggle color theme"
       aria-pressed="false"
-      class="inline-flex size-9 items-center justify-center rounded-md bg-brand-background text-brand-muted-foreground transition pointer-fine:hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
+      class="inline-flex size-9 items-center justify-center rounded-md bg-ns-background text-ns-muted-foreground transition pointer-fine:hover:bg-ns-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
     >
-      <Sun size={16} weight="bold" color="#eab308" class="hidden dark:block" />
-      <Moon size={16} weight="bold" color="#475569" class="dark:hidden" />
+      <Sun size={16} weight="bold" class="hidden dark:block text-solar-400" />
+      <Moon size={16} weight="bold" class="dark:hidden text-north-400" />
     </button>
   </div>
 </nav>
@@ -63,3 +63,4 @@ const alternateHref = getRelativeLocaleUrl(alternateLang, canonicalPath);
     btn.blur();
   });
 </script>
+
