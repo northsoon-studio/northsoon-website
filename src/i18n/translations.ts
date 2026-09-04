@@ -7,8 +7,7 @@ export const ui = {
     "nav.lang": "EN",
 
     // Hero
-    "hero.description":
-      "Hacemos la web. Tú haces el negocio.",
+    "hero.description": "Hacemos la web. Tú haces el negocio.",
     "hero.subtitle": "Rápido. Claro. Tuyo.",
 
     // Section labels
@@ -43,9 +42,10 @@ export const ui = {
       "Pequeños flujos para reducir tareas repetitivas y ahorrar tiempo en el trabajo diario.",
 
     // CTA
-    "cta.title": "Cuéntanos qué necesitas",
+    "cta.title": "¿Tienes una idea o un negocio que necesita una web clara?",
     "cta.desc":
-      "Si necesitas una web, un formulario automatizado o tienes una tarea manual que quieres simplificar, escríbenos. Lo vemos sin compromiso.",
+      "Escríbenos por WhatsApp. Vemos qué tiene sentido construir primero, sin compromiso.",
+    "cta.action": "Hablar por WhatsApp",
 
     // About page
     "about.breadcrumb": "Northsoon · Nosotros",
@@ -86,6 +86,17 @@ export const ui = {
     "work.studio.p3":
       "Una versión anterior del sitio sigue disponible para referencia:",
 
+    "work.fmg3d.breadcrumb": "Proyectos · FMG3D",
+    "work.fmg3d.h1": "FMG3D",
+    "work.fmg3d.status": "en línea",
+    "work.fmg3d.p1":
+      "Sitio web para FMG3D, un estudio chileno de diseño e impresión 3D para proyectos familiares, educativos y personalizados.",
+    "work.fmg3d.p2":
+      "El trabajo consistió en ordenar su propuesta, diseñar una experiencia clara para mostrar sus servicios y crear un camino directo para recibir consultas.",
+    "work.fmg3d.p3":
+      "También se implementó un formulario protegido contra spam, con validación y entrega segura de las consultas al equipo.",
+    "work.fmg3d.link": "Ver fmg3d.cl",
+
     "work.tooling.breadcrumb": "Proyectos · Astro tools",
     "work.tooling.h1": "Astro tools",
     "work.tooling.intro":
@@ -109,8 +120,7 @@ export const ui = {
     "nav.lang": "ES",
 
     // Hero
-    "hero.description":
-      "We build the website. You run the business.",
+    "hero.description": "We build the website. You run the business.",
     "hero.subtitle": "Fast. Clear. Yours.",
 
     // Section labels
@@ -145,9 +155,10 @@ export const ui = {
       "Small workflows that reduce repetitive tasks and save time in day-to-day work.",
 
     // CTA
-    "cta.title": "Tell us what you need",
+    "cta.title": "Do you have an idea or business that needs a clear website?",
     "cta.desc":
-      "If you need a website, an automated form, or have a manual task you want to simplify, send a note. We can look at it with no commitment.",
+      "Send us a WhatsApp message. We will look at what makes sense to build first, with no commitment.",
+    "cta.action": "Chat on WhatsApp",
 
     // About page
     "about.breadcrumb": "Northsoon · About",
@@ -187,6 +198,17 @@ export const ui = {
       "The design is fast, readable, and easy to maintain: the kind of simple foundation that also works well for small businesses.",
     "work.studio.p3":
       "The previous version of the site is still available for reference:",
+
+    "work.fmg3d.breadcrumb": "Projects · FMG3D",
+    "work.fmg3d.h1": "FMG3D",
+    "work.fmg3d.status": "live",
+    "work.fmg3d.p1":
+      "Website for FMG3D, a Chilean 3D design and printing studio for family, educational, and custom projects.",
+    "work.fmg3d.p2":
+      "The work focused on clarifying its offer, designing an experience to present its services, and creating a direct path for inquiries.",
+    "work.fmg3d.p3":
+      "It also includes a spam-protected contact form, with validation and secure delivery of inquiries to the team.",
+    "work.fmg3d.link": "Visit fmg3d.cl",
 
     "work.tooling.breadcrumb": "Projects · Tools",
     "work.tooling.h1": "Astro tools",
@@ -233,10 +255,10 @@ export const projects = {
     },
     {
       n: "03",
-      name: "Tu proyecto",
-      desc: "Buscamos el primer proyecto de cliente. Simple, concreto, con resultado visible.",
-      status: "disponible",
-      href: "mailto:hello@northsoon.com",
+      name: "FMG3D",
+      desc: "Sitio para un estudio chileno de diseño e impresión 3D, con consultas protegidas contra spam.",
+      status: "en línea",
+      href: "/work/fmg3d",
     },
   ],
   en: [
@@ -256,10 +278,10 @@ export const projects = {
     },
     {
       n: "03",
-      name: "Your project",
-      desc: "Looking for our first client project. Simple, concrete, with a visible result.",
-      status: "available",
-      href: "mailto:hello@northsoon.com",
+      name: "FMG3D",
+      desc: "Website for a Chilean 3D design and printing studio, with spam-protected inquiries.",
+      status: "live",
+      href: "/en/work/fmg3d",
     },
   ],
 };

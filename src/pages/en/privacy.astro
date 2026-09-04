@@ -1,0 +1,63 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import BackLink from "@/components/BackLink.astro";
+import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
+---
+
+<BaseLayout
+  title="Privacy · Northsoon"
+  description="How Northsoon handles information from visitors to this site."
+  canonical={`${SITE_URL}/en/privacy/`}
+  lang="en"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/privacy/` },
+    { hreflang: "en", href: `${SITE_URL}/en/privacy/` },
+    { hreflang: "x-default", href: `${SITE_URL}/privacy/` },
+  ]}
+>
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
+    <SiteNav />
+
+    <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
+      <BackLink href="/en/" label="Back" />
+
+      <header class="mt-10">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">Northsoon</p>
+        <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">Privacy</h1>
+      </header>
+
+      <section class="mt-12 space-y-8 text-[15px] leading-relaxed text-ns-muted-foreground">
+        <p>Last updated: September 3, 2026.</p>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Contact</h2>
+          <p class="mt-2">Northsoon has no user accounts or built-in contact form. If you write to us by WhatsApp or email, we use the information you share only to answer your inquiry and discuss a possible project.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Browsing and performance</h2>
+          <p class="mt-2">We use Vercel Analytics and Vercel Speed Insights to understand, in aggregate, how the site performs. Your light or dark theme preference is stored only in your browser through local storage.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Use and retention</h2>
+          <p class="mt-2">We do not sell or share personal data for advertising. We retain conversations only for the reasonable time needed to answer an inquiry or maintain a working relationship.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">External services</h2>
+          <p class="mt-2">WhatsApp and email are external services with their own privacy policies. Their terms also apply when you contact us through them.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Your requests</h2>
+          <p class="mt-2">You may request information, correction, or deletion of the data we hold about you by writing to <a href={`mailto:${CONTACT_EMAIL}`} class="underline decoration-ns-border underline-offset-4 transition hover:text-ns-primary hover:decoration-ns-primary">{CONTACT_EMAIL}</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

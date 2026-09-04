@@ -1,0 +1,63 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import BackLink from "@/components/BackLink.astro";
+import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
+---
+
+<BaseLayout
+  title="Privacidad · Northsoon"
+  description="Cómo Northsoon trata la información de quienes visitan este sitio."
+  canonical={`${SITE_URL}/privacy/`}
+  lang="es"
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/privacy/` },
+    { hreflang: "en", href: `${SITE_URL}/en/privacy/` },
+    { hreflang: "x-default", href: `${SITE_URL}/privacy/` },
+  ]}
+>
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
+    <SiteNav />
+
+    <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
+      <BackLink href="/" label="Volver" />
+
+      <header class="mt-10">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">Northsoon</p>
+        <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">Privacidad</h1>
+      </header>
+
+      <section class="mt-12 space-y-8 text-[15px] leading-relaxed text-ns-muted-foreground">
+        <p>Última actualización: 3 de septiembre de 2026.</p>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Contacto</h2>
+          <p class="mt-2">Northsoon no tiene cuentas de usuario ni formulario propio. Si nos escribes por WhatsApp o correo, usaremos la información que compartas solo para responder tu consulta y conversar sobre un posible proyecto.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Navegación y rendimiento</h2>
+          <p class="mt-2">Usamos Vercel Analytics y Vercel Speed Insights para entender, de forma agregada, cómo funciona el sitio. La preferencia de tema claro u oscuro se guarda solo en tu navegador mediante almacenamiento local.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Uso y conservación</h2>
+          <p class="mt-2">No vendemos ni cedemos datos personales para publicidad. Conservamos las conversaciones solo durante el tiempo razonable para atender una consulta o mantener una relación de trabajo.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Servicios externos</h2>
+          <p class="mt-2">WhatsApp y el correo electrónico son servicios externos con sus propias políticas de privacidad. Al contactarnos por esos medios, también aplican sus condiciones.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">Tus consultas</h2>
+          <p class="mt-2">Puedes pedir información, corrección o eliminación de los datos que tengamos sobre ti escribiendo a <a href={`mailto:${CONTACT_EMAIL}`} class="underline decoration-ns-border underline-offset-4 transition hover:text-ns-primary hover:decoration-ns-primary">{CONTACT_EMAIL}</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

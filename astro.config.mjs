@@ -15,6 +15,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: (page) => !page.endsWith("/work/lab/"),
       i18n: {
         defaultLocale: "es",
         locales: {

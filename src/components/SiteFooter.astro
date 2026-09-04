@@ -4,6 +4,9 @@ import LinkedinLogo from "@northsoon/phosphor-icons-astro/icons/LinkedinLogo.ast
 import { SOCIAL } from "@/data/site-config";
 
 const year = new Date().getFullYear();
+const isEnglish = Astro.url.pathname.startsWith("/en/");
+const privacyHref = isEnglish ? "/en/privacy/" : "/privacy/";
+const privacyLabel = isEnglish ? "Privacy" : "Privacidad";
 ---
 
 <footer class="mx-auto w-full max-w-xl px-6 py-8">
@@ -13,6 +16,12 @@ const year = new Date().getFullYear();
     </p>
 
     <nav aria-label="Northsoon links" class="flex shrink-0 items-center gap-1">
+      <a
+        href={privacyHref}
+        class="px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-ns-muted-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
+      >
+        {privacyLabel}
+      </a>
       <a
         href={SOCIAL.github}
         target="_blank"

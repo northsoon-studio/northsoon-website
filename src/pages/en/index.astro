@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter.astro";
 import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
 import ArrowUpRight from "@northsoon/phosphor-icons-astro/icons/ArrowUpRight.astro";
 import { useTranslations, projects } from "@/i18n/translations";
-import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
+import { SITE_URL } from "@/data/site-config";
 
 const t = useTranslations("en");
 const PROJECTS = projects["en"];
@@ -13,7 +13,7 @@ const PROJECTS = projects["en"];
 const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
 const isHttpExternal = (href: string) => /^https?:/.test(href);
 
-const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mailto.subject"))}&body=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project.`;
+const whatsappHref = `https://wa.me/56958562800?text=${encodeURIComponent("Hi, I would like to talk about a project for my business.")}`;
 ---
 
 <BaseLayout
@@ -160,10 +160,12 @@ const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t("mail
         </p>
 
         <a
-          href={mailtoHref}
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
           class="group inline-flex items-center gap-2 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
         >
-          <span class="font-medium">{CONTACT_EMAIL}</span>
+          <span class="font-medium">{t("cta.action")}</span>
           <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
         </a>
       </section>
