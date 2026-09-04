@@ -94,7 +94,7 @@ export const ui = {
     "work.fmg3d.p2":
       "El trabajo consistió en ordenar su propuesta, diseñar una experiencia clara para mostrar sus servicios y crear un camino directo para recibir consultas.",
     "work.fmg3d.p3":
-      "También se implementó un formulario protegido contra spam, con validación y entrega segura de las consultas al equipo.",
+      "El resultado es un sitio activo que presenta su trabajo, explica sus servicios y facilita el primer contacto.",
     "work.fmg3d.link": "Ver fmg3d.cl",
 
     "work.tooling.breadcrumb": "Proyectos · Astro tools",
@@ -207,7 +207,7 @@ export const ui = {
     "work.fmg3d.p2":
       "The work focused on clarifying its offer, designing an experience to present its services, and creating a direct path for inquiries.",
     "work.fmg3d.p3":
-      "It also includes a spam-protected contact form, with validation and secure delivery of inquiries to the team.",
+      "The result is a live website that presents its work, explains its services, and makes the first contact easier.",
     "work.fmg3d.link": "Visit fmg3d.cl",
 
     "work.tooling.breadcrumb": "Projects · Tools",
@@ -241,47 +241,47 @@ export const projects = {
   es: [
     {
       n: "01",
+      name: "FMG3D",
+      desc: "Sitio para un estudio chileno de diseño e impresión 3D, pensado para explicar sus servicios y recibir consultas.",
+      status: "en línea",
+      href: "/work/fmg3d",
+    },
+    {
+      n: "02",
       name: "Northsoon.com",
       desc: "Este sitio. Construido con Astro, Tailwind y Vercel. Rápido, legible y fácil de mantener.",
       status: "website",
       href: "/work/studio-site",
     },
     {
-      n: "02",
+      n: "03",
       name: "Open Source",
       desc: "Paquetes para Astro que usamos en cada proyecto. MIT. Publicados y mantenidos.",
       status: "open source",
       href: "/work/tooling",
     },
-    {
-      n: "03",
-      name: "FMG3D",
-      desc: "Sitio para un estudio chileno de diseño e impresión 3D, con consultas protegidas contra spam.",
-      status: "en línea",
-      href: "/work/fmg3d",
-    },
   ],
   en: [
     {
       n: "01",
+      name: "FMG3D",
+      desc: "Website for a Chilean 3D design and printing studio, built to explain its services and receive inquiries.",
+      status: "live",
+      href: "/en/work/fmg3d",
+    },
+    {
+      n: "02",
       name: "Northsoon.com",
       desc: "This site. Built with Astro, Tailwind, and Vercel. Fast, readable, and easy to maintain.",
       status: "website",
       href: "/en/work/studio-site",
     },
     {
-      n: "02",
+      n: "03",
       name: "Open Source",
       desc: "Astro packages we use on every project. MIT-licensed. Published and maintained.",
       status: "open source",
       href: "/en/work/tooling",
-    },
-    {
-      n: "03",
-      name: "FMG3D",
-      desc: "Website for a Chilean 3D design and printing studio, with spam-protected inquiries.",
-      status: "live",
-      href: "/en/work/fmg3d",
     },
   ],
 };
