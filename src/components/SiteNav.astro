@@ -16,6 +16,7 @@ const t = useTranslations(locale);
 
 const aboutHref = getRelativeLocaleUrl(locale, 'about');
 const homeHref = getRelativeLocaleUrl(locale, '');
+const contactHref = `${homeHref}#contact`;
 
 const pathname = Astro.url.pathname;
 const alternateLang = locale === 'es' ? 'en' : 'es';
@@ -28,12 +29,19 @@ const alternateHref = getRelativeLocaleUrl(alternateLang, alternatePath ?? canon
     <Logo class="size-10" />
   </a>
 
-  <div class="flex items-center gap-4 sm:gap-5">
+  <div class="flex items-center gap-3 sm:gap-5">
     <a
       href={aboutHref}
       class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground transition hover:text-ns-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
     >
       {t('nav.about')}
+    </a>
+
+    <a
+      href={contactHref}
+      class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground transition hover:text-ns-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
+    >
+      {t('nav.contact')}
     </a>
 
     <a

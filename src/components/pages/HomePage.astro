@@ -48,7 +48,6 @@ const isHttpExternal = (href: string) => /^https?:/.test(href);
         <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
           {t("hero.subtitle")}
         </p>
-        <WhatsAppLink locale={locale} class="mt-6 min-h-11" />
       </section>
 
       <section class="mb-20">
@@ -154,9 +153,9 @@ const isHttpExternal = (href: string) => /^https?:/.test(href);
       </section>
 
 
-      <section>
+      <section id="contact" aria-labelledby="contact-title" tabindex="-1" class="scroll-mt-8 focus:outline-none">
         <header class="mb-6 flex items-center gap-4">
-          <h2 class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
+          <h2 id="contact-title" class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
             {t("section.cta")}
           </h2>
           <span class="h-px flex-1 bg-ns-border" aria-hidden="true"></span>

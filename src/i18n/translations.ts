@@ -4,6 +4,7 @@ export const ui = {
   es: {
     // Nav
     "nav.about": "Nosotros",
+    "nav.contact": "Contacto",
     "nav.lang": "EN",
 
     // Hero
@@ -14,7 +15,7 @@ export const ui = {
     "section.work": "Proyectos",
     "section.how": "Cómo trabajamos",
     "section.help": "Con qué ayudamos",
-    "section.cta": "Trabaja con nosotros",
+    "section.cta": "Contacto",
 
     // How we work
     "how.1.title": "Partimos por algo concreto, no por una plataforma enorme",
@@ -42,9 +43,9 @@ export const ui = {
       "Pequeños flujos para reducir tareas repetitivas y ahorrar tiempo en el trabajo diario.",
 
     // CTA
-    "cta.title": "¿Tienes una idea o un negocio que necesita una web clara?",
+    "cta.title": "Hablemos de tu proyecto.",
     "cta.desc":
-      "Escríbenos por WhatsApp. Vemos qué tiene sentido construir primero, sin compromiso.",
+      "Cuéntanos qué necesitas resolver. Revisamos el alcance y los próximos pasos, sin compromiso.",
     "cta.action": "Hablar por WhatsApp",
     "whatsapp.message": "Hola, me gustaría conversar sobre un proyecto para mi negocio.",
 
@@ -119,6 +120,7 @@ export const ui = {
   en: {
     // Nav
     "nav.about": "About",
+    "nav.contact": "Contact",
     "nav.lang": "ES",
 
     // Hero
@@ -129,7 +131,7 @@ export const ui = {
     "section.work": "Projects",
     "section.how": "How we work",
     "section.help": "What we help with",
-    "section.cta": "Work with us",
+    "section.cta": "Contact",
 
     // How we work
     "how.1.title": "We start with something concrete, not a huge platform",
@@ -157,9 +159,9 @@ export const ui = {
       "Small workflows that reduce repetitive tasks and save time in day-to-day work.",
 
     // CTA
-    "cta.title": "Do you have an idea or business that needs a clear website?",
+    "cta.title": "Let’s talk about your project.",
     "cta.desc":
-      "Send us a WhatsApp message. We will look at what makes sense to build first, with no commitment.",
+      "Tell us what you need to solve. We’ll discuss the scope and next steps, with no commitment.",
     "cta.action": "Chat on WhatsApp",
     "whatsapp.message": "Hi, I would like to talk about a project for my business.",
 
