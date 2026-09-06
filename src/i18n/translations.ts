@@ -9,6 +9,7 @@ export const ui = {
 
     // Hero
     "hero.description": "Hacemos la web. Tú haces el negocio.",
+    "hero.offer": "Creamos sitios web para pequeños negocios, conectamos formularios y automatizamos tareas para ahorrar trabajo manual.",
     "hero.subtitle": "Rápido. Claro. Tuyo.",
 
     // Section labels
@@ -18,23 +19,23 @@ export const ui = {
     "section.cta": "Contacto",
 
     // How we work
-    "how.1.title": "Partimos por algo concreto, no por una plataforma enorme",
+    "how.1.title": "Definimos qué necesita tu negocio",
     "how.1.desc":
-      "Revisamos qué necesitas resolver ahora: una web más clara, un formulario mejor conectado o una tarea manual que se repite demasiado.",
+      "Acordamos qué vamos a construir, qué incluye y qué problema debe resolver.",
     "how.2.title": "Trabajas directo con quien construye",
     "how.2.desc":
-      "Sin intermediarios ni capas innecesarias. Hablamos simple, definimos el alcance y construimos una solución pequeña que puedas entender.",
+      "Conversas con quien diseña y desarrolla tu proyecto. Revisamos los avances contigo y explicamos las decisiones con claridad.",
     "how.3.title": "Dejamos algo funcionando y fácil de mantener",
     "how.3.desc":
-      "Cada entrega busca ser usable desde el primer día: rápida, documentada y pensada para que no dependas de sistemas enormes.",
+      "Entregamos la web o herramienta lista para usar, con documentación para su mantenimiento.",
 
     // What we help with
     "help.1.title": "Sitios web rápidos",
     "help.1.desc":
       "Para negocios que necesitan presencia profesional, buena velocidad y una explicación clara de lo que hacen.",
-    "help.2.title": "Landing pages",
+    "help.2.title": "Páginas para campañas",
     "help.2.desc":
-      "Páginas enfocadas en una oferta concreta, captar consultas y guiar al visitante hacia una acción clara.",
+      "Páginas enfocadas en presentar una oferta concreta y captar consultas.",
     "help.3.title": "Formularios conectados",
     "help.3.desc":
       "Datos desde formularios hacia email, hojas de cálculo o flujos internos sin copiar y pegar manualmente.",
@@ -53,15 +54,15 @@ export const ui = {
     "about.breadcrumb": "Northsoon · Nosotros",
     "about.h1": "Nosotros",
     "about.p1":
-      "Northsoon es un estudio pequeño para construir sitios web y herramientas livianas que ayudan a negocios reales a verse mejor y trabajar con menos fricción.",
+      "Northsoon es un estudio independiente que crea sitios web y herramientas para pequeños negocios que necesitan una presencia profesional y menos trabajo manual.",
     "about.p2":
-      "Empezamos por soluciones simples: una web clara, una landing para captar consultas, un formulario bien conectado o una automatización que quite trabajo manual.",
+      "Construimos webs que explican tus servicios, páginas para campañas y formularios conectados al correo o a hojas de cálculo. También automatizamos tareas repetitivas del día a día.",
     "about.p3":
-      "No intentamos vender plataformas gigantes. Preferimos partir con un problema concreto, construir algo útil y mejorar desde ahí si el negocio lo necesita.",
+      "Trabajas directamente con quien diseña y desarrolla. Definimos el alcance según tus prioridades, revisamos los avances contigo y dejamos documentado lo que entregamos.",
     "about.p4.before": "Fundado por",
     "about.p4.after":
-      "en San Esteban, Los Andes, Chile. El objetivo es simple: ayudar a negocios pequeños a tener presencia online, verse profesionales y perder menos tiempo en trabajo repetitivo.",
-    "about.cta.label": "Empezar simple",
+      "en San Esteban, Los Andes, Chile.",
+    "about.cta.label": "Hablemos de tu proyecto",
     "about.cta.desc":
       "Si necesitas una web o quieres simplificar una tarea repetitiva, hablemos.",
 
@@ -72,7 +73,7 @@ export const ui = {
     // SEO
     "seo.home.title": "Northsoon · Sitios web y automatización simple",
     "seo.home.desc":
-      "Northsoon ayuda a negocios pequeños a tener una web clara, captar más consultas y automatizar tareas repetitivas sin sistemas innecesarios.",
+      "Creamos sitios web para pequeños negocios, páginas para campañas y formularios conectados. Automatizamos tareas repetitivas para ahorrar trabajo manual.",
     "seo.about.title": "Nosotros · Northsoon",
     "seo.about.desc":
       "Northsoon es un estudio independiente fundado por Manuel Caballero en San Esteban, Los Andes, Chile. Creamos sitios web rápidos y herramientas simples para negocios pequeños.",
@@ -92,12 +93,17 @@ export const ui = {
     "work.fmg3d.h1": "FMG3D",
     "work.fmg3d.imageAlt": "Portada del sitio web de FMG3D",
     "work.fmg3d.status": "en línea",
+    "work.fmg3d.need": "La necesidad",
+    "work.fmg3d.work": "El trabajo",
+    "work.fmg3d.delivery": "La entrega",
     "work.fmg3d.p1":
-      "Sitio web para FMG3D, un estudio chileno de diseño e impresión 3D para proyectos familiares, educativos y personalizados.",
+      "Sitio web para FMG3D, un estudio familiar chileno de diseño e impresión 3D que comienza con objetos para aprender, comunicar y organizar.",
     "work.fmg3d.p2":
-      "El trabajo consistió en ordenar su propuesta, diseñar una experiencia clara para mostrar sus servicios y crear un camino directo para recibir consultas.",
+      "Presentar el estudio, sus primeras líneas de objetos y su forma de trabajar, con un lugar claro para proponer un proyecto.",
     "work.fmg3d.p3":
-      "El resultado es un sitio activo que presenta su trabajo, explica sus servicios y facilita el primer contacto.",
+      "Organizamos el contenido y diseñamos el recorrido entre proyectos, origen y proceso. Las imágenes muestran sus líneas de exploración y los enlaces llevan a la sección de contacto.",
+    "work.fmg3d.p4":
+      "Una web publicada en fmg3d.cl, con secciones para los proyectos en desarrollo y un formulario que pide nombre, correo y la necesidad a resolver. Incluye un enlace al correo del estudio como alternativa de contacto.",
     "work.fmg3d.link": "Ver fmg3d.cl",
 
     "work.tooling.breadcrumb": "Proyectos · Astro tools",
@@ -125,6 +131,7 @@ export const ui = {
 
     // Hero
     "hero.description": "We build the website. You run the business.",
+    "hero.offer": "We build websites for small businesses, connect forms, and automate tasks to reduce manual work.",
     "hero.subtitle": "Fast. Clear. Yours.",
 
     // Section labels
@@ -134,15 +141,15 @@ export const ui = {
     "section.cta": "Contact",
 
     // How we work
-    "how.1.title": "We start with something concrete, not a huge platform",
+    "how.1.title": "We define what your business needs",
     "how.1.desc":
-      "We look at what you need right now: a clearer website, a better connected form, or a manual task that happens too often.",
+      "We agree on what we will build, what is included, and which problem it should solve.",
     "how.2.title": "You work directly with the person building",
     "how.2.desc":
-      "No intermediaries or unnecessary layers. We keep the scope clear and build a small solution you can understand.",
+      "You speak with the person designing and developing your project. We review progress with you and explain our decisions clearly.",
     "how.3.title": "We leave you with something working and maintainable",
     "how.3.desc":
-      "Every delivery aims to be useful from day one: fast, documented, and designed so you do not depend on a huge system.",
+      "We deliver a website or tool that is ready to use, with documentation to help you maintain it.",
 
     // What we help with
     "help.1.title": "Fast websites",
@@ -150,7 +157,7 @@ export const ui = {
       "For businesses that need a professional presence, strong performance, and a clear explanation of what they do.",
     "help.2.title": "Landing pages",
     "help.2.desc":
-      "Focused pages for one clear offer, generating inquiries and guiding visitors toward action.",
+      "Pages focused on presenting a specific offer and generating inquiries.",
     "help.3.title": "Connected forms",
     "help.3.desc":
       "Send form data to email, spreadsheets, or internal workflows without manual copy-paste.",
@@ -169,15 +176,15 @@ export const ui = {
     "about.breadcrumb": "Northsoon · About",
     "about.h1": "About",
     "about.p1":
-      "Northsoon is a small studio for building websites and lightweight tools that help real businesses look better and work with less friction.",
+      "Northsoon is an independent studio building websites and tools for small businesses that need a professional presence and less manual work.",
     "about.p2":
-      "We start with simple solutions: a clear website, a landing page for inquiries, a well-connected form, or an automation that removes manual work.",
+      "We build websites that explain your services, landing pages for campaigns, and forms connected to email or spreadsheets. We also automate repetitive day-to-day tasks.",
     "about.p3":
-      "We do not try to sell huge platforms. We prefer to start with one concrete problem, build something useful, and improve from there if the business needs it.",
+      "You work directly with the person designing and developing your project. We define the scope around your priorities, review progress with you, and document what we deliver.",
     "about.p4.before": "Founded by",
     "about.p4.after":
-      "in San Esteban, Los Andes, Chile. The goal is simple: help small businesses get online, look professional, and spend less time on repetitive work.",
-    "about.cta.label": "Start simple",
+      "in San Esteban, Los Andes, Chile.",
+    "about.cta.label": "Let’s talk about your project",
     "about.cta.desc":
       "If you need a website or want to simplify a repetitive task, let's talk.",
 
@@ -188,7 +195,7 @@ export const ui = {
     // SEO
     "seo.home.title": "Northsoon · Websites and simple automation",
     "seo.home.desc":
-      "Northsoon helps small businesses get a clear website, generate more inquiries, and automate repetitive tasks without unnecessary systems.",
+      "We build websites for small businesses, landing pages for campaigns, and connected forms. We automate repetitive tasks to reduce manual work.",
     "seo.about.title": "About · Northsoon",
     "seo.about.desc":
       "Northsoon is an independent studio founded by Manuel Caballero in San Esteban, Los Andes, Chile. We build fast websites and simple tools for small businesses.",
@@ -208,12 +215,17 @@ export const ui = {
     "work.fmg3d.h1": "FMG3D",
     "work.fmg3d.imageAlt": "FMG3D website homepage",
     "work.fmg3d.status": "live",
+    "work.fmg3d.need": "The need",
+    "work.fmg3d.work": "The work",
+    "work.fmg3d.delivery": "The delivery",
     "work.fmg3d.p1":
-      "Website for FMG3D, a Chilean 3D design and printing studio for family, educational, and custom projects.",
+      "Website for FMG3D, a family-run Chilean 3D design and printing studio starting with objects for learning, communication, and organization.",
     "work.fmg3d.p2":
-      "The work focused on clarifying its offer, designing an experience to present its services, and creating a direct path for inquiries.",
+      "Introduce the studio, its first product lines, and its approach, with a clear place for visitors to propose a project.",
     "work.fmg3d.p3":
-      "The result is a live website that presents its work, explains its services, and makes the first contact easier.",
+      "We organized the content and designed the path through projects, the studio’s origins, and its process. Images show the areas it is exploring, and links lead to the contact section.",
+    "work.fmg3d.p4":
+      "A website published at fmg3d.cl, with sections for projects in development and a form asking for a name, email address, and the need to address. A link to the studio’s email offers another way to get in touch.",
     "work.fmg3d.link": "Visit fmg3d.cl",
 
     "work.tooling.breadcrumb": "Projects · Tools",
@@ -248,7 +260,7 @@ export const projects = {
     {
       n: "01",
       name: "FMG3D",
-      desc: "Sitio para un estudio chileno de diseño e impresión 3D, pensado para explicar sus servicios y recibir consultas.",
+      desc: "Web para un estudio chileno de diseño e impresión 3D: proyectos en desarrollo, proceso de trabajo y formulario de contacto.",
       status: "en línea",
       href: "/work/fmg3d",
     },
@@ -256,7 +268,7 @@ export const projects = {
       n: "02",
       name: "Northsoon.com",
       desc: "Este sitio. Construido con Astro, Tailwind y Vercel. Rápido, legible y fácil de mantener.",
-      status: "website",
+      status: "sitio web",
       href: "/work/studio-site",
     },
     {
@@ -271,7 +283,7 @@ export const projects = {
     {
       n: "01",
       name: "FMG3D",
-      desc: "Website for a Chilean 3D design and printing studio, built to explain its services and receive inquiries.",
+      desc: "Website for a Chilean 3D design and printing studio: projects in development, its process, and a contact form.",
       status: "live",
       href: "/en/work/fmg3d",
     },

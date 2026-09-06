@@ -61,8 +61,18 @@ const t = useTranslations(locale);
 
       <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-ns-muted-foreground">
         <p>{t("work.fmg3d.p1")}</p>
-        <p>{t("work.fmg3d.p2")}</p>
-        <p>{t("work.fmg3d.p3")}</p>
+        <section>
+          <h2 class="mb-2 font-medium text-ns-foreground">{t("work.fmg3d.need")}</h2>
+          <p>{t("work.fmg3d.p2")}</p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-medium text-ns-foreground">{t("work.fmg3d.work")}</h2>
+          <p>{t("work.fmg3d.p3")}</p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-medium text-ns-foreground">{t("work.fmg3d.delivery")}</h2>
+          <p>{t("work.fmg3d.p4")}</p>
+        </section>
         <p>
           <a href="https://fmg3d.cl/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background">
             <span class="font-medium">{t("work.fmg3d.link")}</span>
