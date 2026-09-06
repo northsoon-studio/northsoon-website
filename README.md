@@ -47,7 +47,7 @@ Local server at `http://localhost:4321` with hot reload.
 bun run build
 ```
 
-Static output to `./dist/`.
+Checks types before generating static output to `./dist/`. Run `bun run check` to check types without building.
 
 ### Preview production build
 
@@ -62,7 +62,8 @@ bun run preview
 | Command            | Description                                                  |
 | :----------------- | :----------------------------------------------------------- |
 | `bun run dev`      | Start dev server at `localhost:4321`                         |
-| `bun run build`    | Build to `./dist/`                                           |
+| `bun run check`    | Check TypeScript and Astro diagnostics                       |
+| `bun run build`    | Check types and build to `./dist/`                           |
 | `bun run preview`  | Preview production build locally                             |
 | `bun run astro`    | Run any Astro CLI command (e.g. `bun run astro check`)       |
 
@@ -71,6 +72,14 @@ bun run preview
 ## Deployment
 
 Pushes to `main` auto-deploy to Vercel.
+
+## Shared pages and content
+
+The Spanish and English routes for home, FMG3D, and privacy use shared templates in
+`src/components/pages/`. Edit those templates to update both languages together.
+Localized copy lives in `src/i18n/translations.ts` and `src/i18n/privacy.ts`.
+`src/components/WhatsAppLink.astro` owns the contact link, with the number configured
+once in `src/data/site-config.ts`.
 
 ---
 

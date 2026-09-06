@@ -67,7 +67,7 @@ const twitter = SOCIAL.twitterHandle
     title: ogTitle,
     description: ogDescription,
     site_name: "Northsoon",
-    images: [{ url: ogImage, width: 1200, height: 630 }],
+    images: [{ url: ogImage, ...(ogImage === DEFAULT_SEO.ogImage ? { width: 1500, height: 500 } : {}) }],
   }}
   twitter={twitter}
   languageAlternates={alternates}

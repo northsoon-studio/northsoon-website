@@ -1,0 +1,61 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import BackLink from "@/components/BackLink.astro";
+import { CONTACT_EMAIL, SITE_URL } from "@/data/site-config";
+import { useTranslations, type Locale } from "@/i18n/translations";
+import { privacyContent } from "@/i18n/privacy";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const content = privacyContent[locale];
+const t = useTranslations(locale);
+---
+
+<BaseLayout
+  title={content.title}
+  description={content.description}
+  canonical={new URL(getRelativeLocaleUrl(locale, "privacy"), SITE_URL).href}
+  lang={locale}
+  alternates={[
+    { hreflang: "es", href: `${SITE_URL}/privacy/` },
+    { hreflang: "en", href: `${SITE_URL}/en/privacy/` },
+    { hreflang: "x-default", href: `${SITE_URL}/privacy/` },
+  ]}
+>
+  <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
+    <SiteNav />
+
+    <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
+      <BackLink href={getRelativeLocaleUrl(locale, "")} label={t("back")} />
+
+      <header class="mt-10">
+        <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">Northsoon</p>
+        <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">{content.heading}</h1>
+      </header>
+
+      <section class="mt-12 space-y-8 text-[15px] leading-relaxed text-ns-muted-foreground">
+        <p>{content.updated}</p>
+
+        {content.sections.map((section) => (
+          <div>
+            <h2 class="font-medium text-ns-foreground">{section.title}</h2>
+            <p class="mt-2">{section.text}</p>
+          </div>
+        ))}
+
+        <div>
+          <h2 class="font-medium text-ns-foreground">{content.contact.title}</h2>
+          <p class="mt-2">{content.contact.before}<a href={`mailto:${CONTACT_EMAIL}`} class="underline decoration-ns-border underline-offset-4 transition hover:text-ns-primary hover:decoration-ns-primary">{CONTACT_EMAIL}</a>{content.contact.after}</p>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

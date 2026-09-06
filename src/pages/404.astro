@@ -3,32 +3,34 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
+import { SITE_URL } from "@/data/site-config";
 ---
 
 <BaseLayout
-  title="Not found · Northsoon"
-  description="The page you're looking for doesn't exist."
-  lang="en"
+  title="Página no encontrada · Northsoon"
+  description="La página que buscas no existe o cambió de dirección."
+  canonical={`${SITE_URL}/404.html`}
+  lang="es"
   noindex
   nofollow
 >
   <div class="flex min-h-screen flex-col bg-ns-background text-ns-foreground">
-    <SiteNav />
+    <SiteNav alternatePath="/" />
 
     <main class="mx-auto w-full max-w-xl flex-1 px-6 pb-16 pt-10 sm:pt-20">
       <header>
         <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-ns-muted-foreground">
-          404 · Not found
+          404 · Página no encontrada
         </p>
         <h1 class="mt-6 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-          Off the bench.
+          Aquí no hay página.
         </h1>
       </header>
 
       <section class="mt-12 space-y-6 text-[15px] leading-relaxed text-ns-muted-foreground">
         <p>
-          The page you're looking for isn't here. Maybe it moved, maybe it
-          never existed.
+          La página que buscas no está aquí. Puede que haya cambiado de dirección
+          o que el enlace sea incorrecto.
         </p>
       </section>
 
@@ -37,7 +39,7 @@ import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
           href="/"
           class="group inline-flex items-center gap-2 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background"
         >
-          <span class="font-medium">Back to home</span>
+          <span class="font-medium">Volver al inicio</span>
           <ArrowRight size={14} weight="bold" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
         </a>
       </section>

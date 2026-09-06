@@ -6,6 +6,11 @@ import Logo from "@/components/Logo.astro";
 import { useTranslations } from "@/i18n/translations";
 import type { Locale } from "@/i18n/translations";
 
+interface Props {
+  alternatePath?: string;
+}
+
+const { alternatePath } = Astro.props;
 const locale = (Astro.currentLocale ?? 'es') as Locale;
 const t = useTranslations(locale);
 
@@ -15,7 +20,7 @@ const homeHref = getRelativeLocaleUrl(locale, '');
 const pathname = Astro.url.pathname;
 const alternateLang = locale === 'es' ? 'en' : 'es';
 const canonicalPath = locale === 'en' ? (pathname.replace(/^\/en/, '') || '/') : pathname;
-const alternateHref = getRelativeLocaleUrl(alternateLang, canonicalPath);
+const alternateHref = getRelativeLocaleUrl(alternateLang, alternatePath ?? canonicalPath);
 ---
 
 <nav aria-label={locale === 'es' ? 'Navegación principal' : 'Main navigation'} class="mx-auto flex w-full max-w-xl items-center justify-between px-6 py-5">
@@ -60,7 +65,6 @@ const alternateHref = getRelativeLocaleUrl(alternateLang, canonicalPath);
     const isDark = document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
     btn.setAttribute("aria-pressed", String(isDark));
-    btn.blur();
   });
 </script>
 

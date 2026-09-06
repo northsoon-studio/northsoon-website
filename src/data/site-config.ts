@@ -1,5 +1,6 @@
 export const SITE_URL = "https://northsoon.com";
 export const CONTACT_EMAIL = "hello@northsoon.com";
+export const WHATSAPP_NUMBER = "56958562800";
 
 export const FOUNDER = {
   name: "Manuel Caballero",

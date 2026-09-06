@@ -46,6 +46,7 @@ export const ui = {
     "cta.desc":
       "Escríbenos por WhatsApp. Vemos qué tiene sentido construir primero, sin compromiso.",
     "cta.action": "Hablar por WhatsApp",
+    "whatsapp.message": "Hola, me gustaría conversar sobre un proyecto para mi negocio.",
 
     // About page
     "about.breadcrumb": "Northsoon · Nosotros",
@@ -88,6 +89,7 @@ export const ui = {
 
     "work.fmg3d.breadcrumb": "Proyectos · FMG3D",
     "work.fmg3d.h1": "FMG3D",
+    "work.fmg3d.imageAlt": "Portada del sitio web de FMG3D",
     "work.fmg3d.status": "en línea",
     "work.fmg3d.p1":
       "Sitio web para FMG3D, un estudio chileno de diseño e impresión 3D para proyectos familiares, educativos y personalizados.",
@@ -159,6 +161,7 @@ export const ui = {
     "cta.desc":
       "Send us a WhatsApp message. We will look at what makes sense to build first, with no commitment.",
     "cta.action": "Chat on WhatsApp",
+    "whatsapp.message": "Hi, I would like to talk about a project for my business.",
 
     // About page
     "about.breadcrumb": "Northsoon · About",
@@ -201,6 +204,7 @@ export const ui = {
 
     "work.fmg3d.breadcrumb": "Projects · FMG3D",
     "work.fmg3d.h1": "FMG3D",
+    "work.fmg3d.imageAlt": "FMG3D website homepage",
     "work.fmg3d.status": "live",
     "work.fmg3d.p1":
       "Website for FMG3D, a Chilean 3D design and printing studio for family, educational, and custom projects.",

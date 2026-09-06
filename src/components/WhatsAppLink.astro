@@ -1,0 +1,27 @@
+---
+import ArrowRight from "@northsoon/phosphor-icons-astro/icons/ArrowRight.astro";
+import { WHATSAPP_NUMBER } from "@/data/site-config";
+import { useTranslations, type Locale } from "@/i18n/translations";
+
+interface Props {
+  locale: Locale;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+const t = useTranslations(locale);
+const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t("whatsapp.message"))}`;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    "group inline-flex items-center gap-2 text-ns-foreground transition hover:text-ns-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ns-primary focus-visible:ring-offset-2 focus-visible:ring-offset-ns-background",
+    className,
+  ]}
+>
+  <span class="font-medium">{t("cta.action")}</span>
+  <ArrowRight size={14} weight="bold" aria-hidden="true" class="opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100" />
+</a>
