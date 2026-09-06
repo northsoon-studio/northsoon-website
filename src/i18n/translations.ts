@@ -9,7 +9,7 @@ export const ui = {
 
     // Hero
     "hero.description": "Hacemos la web. Tú haces el negocio.",
-    "hero.offer": "Creamos sitios web para pequeños negocios, conectamos formularios y automatizamos tareas para ahorrar trabajo manual.",
+    "hero.offer": "Una presencia profesional en internet y menos trabajo manual para pequeños negocios.",
     "hero.subtitle": "Rápido. Claro. Tuyo.",
 
     // Section labels
@@ -131,7 +131,7 @@ export const ui = {
 
     // Hero
     "hero.description": "We build the website. You run the business.",
-    "hero.offer": "We build websites for small businesses, connect forms, and automate tasks to reduce manual work.",
+    "hero.offer": "A professional online presence and less manual work for small businesses.",
     "hero.subtitle": "Fast. Clear. Yours.",
 
     // Section labels
